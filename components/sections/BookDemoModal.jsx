@@ -57,21 +57,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
     setLoading(true);
 
     try {
-      /*
-      const response = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong. Please try again.');
-      }
-      */
-
-      // Simulate a brief delay for UI feedback
+      // Simulate submission delay for smooth UI feedback
       await new Promise((resolve) => setTimeout(resolve, 600));
 
       setSuccess(true);
