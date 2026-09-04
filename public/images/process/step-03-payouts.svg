@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" width="100%" height="100%" fill="none">
+  <defs>
+    <radialGradient id="bg-glow-3" cx="70%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0e0e12" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pill-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="480" fill="#0f0f12"/>
+  <rect width="700" height="480" fill="url(#bg-glow-3)"/>
+
+  <!-- Concentric Orbital Dashed Circles -->
+  <g opacity="0.6">
+    <circle cx="620" cy="240" r="140" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+    <circle cx="620" cy="240" r="230" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+    <circle cx="620" cy="240" r="320" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+    <circle cx="620" cy="240" r="410" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+  </g>
+
+  <!-- Central Node -->
+  <circle cx="620" cy="240" r="28" fill="#18181b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="620" y="246" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">✓</text>
+
+  <!-- Floating Pills -->
+  
+  <!-- Pill 1: Paypal -->
+  <g transform="translate(340, 80)" filter="url(#pill-shadow)">
+    <rect width="180" height="56" rx="28" fill="#16161a" stroke="#3f3f46" stroke-width="1.5"/>
+    <!-- Logo -->
+    <rect x="14" y="14" width="28" height="28" rx="14" fill="#003087"/>
+    <text x="28" y="33" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900" text-anchor="middle">P</text>
+    <text x="56" y="35" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Paypal</text>
+  </g>
+
+  <!-- Pill 2: Check / Bank Transfer -->
+  <g transform="translate(140, 212)" filter="url(#pill-shadow)">
+    <rect width="170" height="56" rx="28" fill="#16161a" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="14" y="14" width="28" height="28" rx="8" fill="#4c0519"/>
+    <!-- Bank icon -->
+    <path d="M20 34 h16 M22 28 h12 M28 20 l8 5 h-16 z" stroke="#fb7185" stroke-width="1.5" fill="none"/>
+    <text x="56" y="35" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Check</text>
+  </g>
+
+  <!-- Pill 3: Cash -->
+  <g transform="translate(340, 344)" filter="url(#pill-shadow)">
+    <rect width="170" height="56" rx="28" fill="#16161a" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="14" y="14" width="28" height="28" rx="8" fill="#064e3b"/>
+    <!-- Cash icon -->
+    <rect x="20" y="22" width="16" height="12" rx="2" stroke="#34d399" stroke-width="1.5" fill="none"/>
+    <circle cx="28" cy="28" r="2" fill="#34d399"/>
+    <text x="56" y="35" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Cash</text>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" width="100%" height="100%" fill="none">
+  <defs>
+    <radialGradient id="bg-glow-1" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0e0e12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emma-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5e62"/>
+      <stop offset="50%" stop-color="#ff6b8b"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="480" fill="#0f0f12"/>
+  <rect width="700" height="480" fill="url(#bg-glow-1)"/>
+
+  <!-- Left Side: Vertical Path with Node & Avatar Stack -->
+  <g transform="translate(100, 110)">
+    <!-- Vertical dashed line -->
+    <line x1="24" y1="48" x2="24" y2="180" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <!-- Top @ Icon Box -->
+    <rect x="2" y="2" width="44" height="44" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="24" y="30" fill="#e4e4e7" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">@</text>
+
+    <!-- Overlapping Avatars -->
+    <!-- Avatar 1 -->
+    <circle cx="24" cy="180" r="18" fill="#e11d48"/>
+    <text x="24" y="185" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">EM</text>
+    
+    <!-- Avatar 2 -->
+    <circle cx="24" cy="214" r="18" fill="#6366f1"/>
+    <text x="24" y="219" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">AL</text>
+
+    <!-- Avatar 3 -->
+    <circle cx="24" cy="248" r="18" fill="#10b981"/>
+    <text x="24" y="253" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">SR</text>
+  </g>
+
+  <!-- Right Side: Message Card -->
+  <g transform="translate(210, 85)" filter="url(#card-shadow)">
+    <!-- Card Base -->
+    <rect width="400" height="310" rx="20" fill="#16161a" stroke="url(#card-border)" stroke-width="1.5"/>
+
+    <!-- Header info -->
+    <text x="32" y="48" fill="#71717a" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="bold" letter-spacing="1.5">FROM YOUR STORE</text>
+    <text x="32" y="76" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600">Welcome onboard, <tspan font-style="italic" font-weight="bold">Emma</tspan></text>
+
+    <!-- Divider Line -->
+    <line x1="32" y1="100" x2="368" y2="100" stroke="#27272a" stroke-width="1"/>
+
+    <!-- Message text -->
+    <text x="32" y="132" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="normal">Hey <tspan fill="#ffffff" font-weight="bold">@Emma</tspan>, your affiliate account is live.</text>
+    <text x="32" y="156" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="13">Here's your custom code &amp; link</text>
+
+    <!-- Big Coupon Banner Box -->
+    <g transform="translate(32, 190)">
+      <rect width="336" height="85" rx="14" fill="#0b0b0e" stroke="#27272a" stroke-width="1.5"/>
+      <text x="168" y="54" fill="url(#emma-grad)" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" letter-spacing="3" text-anchor="middle">EMMA 20</text>
+    </g>
+  </g>
+</svg>

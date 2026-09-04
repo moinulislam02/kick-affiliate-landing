@@ -1,0 +1,514 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+  ArrowRight,
+  Rocket,
+  Share2,
+  ShoppingBag,
+  BarChart3,
+  Megaphone,
+  Wallet,
+  Settings,
+  Users,
+  Star,
+  ArrowLeftRight,
+  Handshake,
+  Shirt,
+  Heart,
+  Home,
+  Trophy,
+  Zap,
+} from 'lucide-react';
+import Button from '../primitives/Button';
+
+export default function Header({ onBookDemo }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isMobileMegaOpen, setIsMobileMegaOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const megaMenuFeatures = [
+    { title: 'Launch Program', icon: <Rocket className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Track & Analyze', icon: <BarChart3 className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Motivate & Activate', icon: <Megaphone className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Pay Affiliates', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Automate Process', icon: <Settings className="w-4 h-4 text-blue-600" />, href: '#features' },
+  ];
+
+  const megaMenuUseCases = [
+    { title: 'Affiliate Marketing', icon: <Users className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Influencer Marketing', icon: <Star className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Referral Marketing', icon: <ArrowLeftRight className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Partner Marketing', icon: <Handshake className="w-4 h-4 text-blue-600" />, href: '#features' },
+  ];
+
+  const megaMenuIndustries = [
+    { title: 'Fashion', icon: <Shirt className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Beauty & Health', icon: <Heart className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Home & Tool', icon: <Home className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Sports', icon: <Trophy className="w-4 h-4 text-blue-600" />, href: '#features' },
+  ];
+
+  const megaMenuData = [
+    {
+      title: 'By Feature',
+      icon: <Rocket className="w-3.5 h-3.5 text-blue-600" />,
+      items: megaMenuFeatures.map((f) => f.title),
+    },
+    {
+      title: 'By Use Case',
+      icon: <Share2 className="w-3.5 h-3.5 text-blue-600" />,
+      items: megaMenuUseCases.map((u) => u.title),
+    },
+    {
+      title: 'By Industry',
+      icon: <ShoppingBag className="w-3.5 h-3.5 text-blue-600" />,
+      items: megaMenuIndustries.map((i) => i.title),
+    },
+  ];
+
+  return (
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-sm border-b border-slate-200/60 py-3.5 shadow-xs'
+            : 'bg-transparent py-5'
+        }`}
+      >
+        {/* Full-width container with edge padding instead of constrained max-width container */}
+        <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
+          
+          {/* Left Block: Logo + Navigation Links */}
+          <div className="flex items-center gap-10">
+            {/* Logo */}
+            <div className="flex items-center gap-2.5 select-none">
+              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain" />
+              <span className="font-display font-extrabold text-lg tracking-tight text-slate-900">
+                Kick<span className="text-primary">Affiliate</span>
+              </span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6">
+              {/* Mega Menu Trigger */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsMegaMenuOpen(true)}
+                onMouseLeave={() => setIsMegaMenuOpen(false)}
+              >
+                <button className="flex items-center gap-1 font-medium text-slate-800 hover:text-slate-950 text-[13px] py-2 transition-colors">
+                  Solutions <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isMegaMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.99 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.99 }}
+                      transition={{ duration: 0.15, ease: 'easeOut' }}
+                      className="absolute left-[-120px] top-full pt-3 w-[980px] lg:w-[1020px] z-50"
+                    >
+                      {/* Speech-bubble Top Caret */}
+                      <div className="absolute top-[5px] left-[152px] w-4 h-4 bg-white border-t border-l border-slate-200/90 rotate-45 z-20 shadow-xs" />
+
+                      {/* Mega Menu Box */}
+                      <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200/70 border border-slate-200/90 p-8 grid grid-cols-12 gap-7 relative z-10">
+                        {/* Column 1: By Feature */}
+                        <div className="col-span-3 flex flex-col justify-between">
+                          <div>
+                            {/* Column Header */}
+                            <div className="space-y-2">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                                <Rocket className="w-4.5 h-4.5 text-blue-600" />
+                              </div>
+                              <div>
+                                <span className="font-display font-bold text-blue-600 text-xs tracking-wider uppercase block">
+                                  By Feature
+                                </span>
+                                <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
+                                  Powerful features to run and scale your affiliate program.
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Divider Line */}
+                            <div className="border-b border-slate-100 my-4" />
+
+                            {/* Item List */}
+                            <ul className="space-y-1.5">
+                              {megaMenuFeatures.map((item, idx) => (
+                                <li key={idx}>
+                                  <a
+                                    href={item.href || '#'}
+                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  >
+                                    <div className="flex items-center gap-2.5">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                        {item.icon}
+                                      </span>
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                      </span>
+                                    </div>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Column 2: By Use Case */}
+                        <div className="col-span-3 flex flex-col justify-between">
+                          <div>
+                            {/* Column Header */}
+                            <div className="space-y-2">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                                <Share2 className="w-4.5 h-4.5 text-blue-600" />
+                              </div>
+                              <div>
+                                <span className="font-display font-bold text-blue-600 text-xs tracking-wider uppercase block">
+                                  By Use Case
+                                </span>
+                                <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
+                                  Use case tailored for how you grow.
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Divider Line */}
+                            <div className="border-b border-slate-100 my-4" />
+
+                            {/* Item List */}
+                            <ul className="space-y-1.5">
+                              {megaMenuUseCases.map((item, idx) => (
+                                <li key={idx}>
+                                  <a
+                                    href={item.href || '#'}
+                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  >
+                                    <div className="flex items-center gap-2.5">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                        {item.icon}
+                                      </span>
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                      </span>
+                                    </div>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Column 3: By Industry */}
+                        <div className="col-span-3 flex flex-col justify-between">
+                          <div>
+                            {/* Column Header */}
+                            <div className="space-y-2">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                                <ShoppingBag className="w-4.5 h-4.5 text-blue-600" />
+                              </div>
+                              <div>
+                                <span className="font-display font-bold text-blue-600 text-xs tracking-wider uppercase block">
+                                  By Industry
+                                </span>
+                                <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
+                                  Built to fit your industry and your customers.
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Divider Line */}
+                            <div className="border-b border-slate-100 my-4" />
+
+                            {/* Item List */}
+                            <ul className="space-y-1.5">
+                              {megaMenuIndustries.map((item, idx) => (
+                                <li key={idx}>
+                                  <a
+                                    href={item.href || '#'}
+                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  >
+                                    <div className="flex items-center gap-2.5">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                        {item.icon}
+                                      </span>
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                      </span>
+                                    </div>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Column 4: Promo Card */}
+                        <div className="col-span-3">
+                          <div className="bg-gradient-to-b from-[#f0f4ff] via-[#f7f9ff] to-[#fbfaff] rounded-2xl border border-blue-100/80 p-6 h-full flex flex-col justify-between items-center text-center shadow-xs relative overflow-hidden group hover:border-blue-200 transition-colors">
+                            {/* 3D Platform Graphic */}
+                            <div className="relative w-full h-32 flex items-center justify-center my-1 select-none">
+                              {/* Floating mini badges */}
+                              <div className="absolute top-2 left-4 w-7 h-7 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-blue-600 animate-float-slow-1">
+                                <Zap className="w-3.5 h-3.5 fill-blue-600/20" />
+                              </div>
+                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-blue-600 animate-float-slow-2">
+                                <BarChart3 className="w-3.5 h-3.5" />
+                              </div>
+                              <div className="absolute top-2 right-4 w-7 h-7 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-blue-600 animate-float-slow-1">
+                                <Users className="w-3.5 h-3.5" />
+                              </div>
+
+                              {/* Center Logo with Isometric Stack */}
+                              <div className="relative flex flex-col items-center justify-center mt-5">
+                                <div className="relative z-20 w-11 h-11 rounded-xl bg-blue-600 shadow-lg shadow-blue-500/30 flex items-center justify-center text-white border border-blue-400/40">
+                                  <img
+                                    src="/kick-affiliate.png"
+                                    alt="KickAffiliate"
+                                    className="w-6 h-6 object-contain brightness-0 invert"
+                                  />
+                                </div>
+                                <div className="absolute -bottom-2 z-10 w-28 h-8 bg-gradient-to-r from-blue-200/60 via-blue-100/90 to-blue-200/60 rounded-full blur-[1px] border border-blue-300/50" />
+                                <div className="absolute -bottom-4 z-0 w-36 h-10 bg-gradient-to-r from-blue-100/40 via-indigo-100/60 to-blue-100/40 rounded-full blur-[2px] border border-blue-200/40" />
+                              </div>
+                            </div>
+
+                            {/* Headline */}
+                            <p className="font-display font-extrabold text-base text-slate-900 leading-snug tracking-tight px-1 mt-2">
+                              Explore the #1 affiliate platform built for Shopify
+                            </p>
+
+                            {/* Bottom Link */}
+                            <a
+                              href="#features"
+                              className="text-[11px] font-extrabold tracking-wider text-blue-600 hover:text-blue-700 uppercase flex items-center justify-center gap-1.5 mt-5 transition-all group-hover:translate-x-0.5"
+                            >
+                              See Full Features <ArrowRight className="w-3.5 h-3.5" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <a href="#features" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Shopify Plus
+              </a>
+              <a href="#pricing" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Pricing
+              </a>
+              <a href="#switch" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Switch to KickAffiliate
+              </a>
+              <div className="relative flex items-center gap-1 font-medium text-slate-850 hover:text-slate-950 text-[13px] cursor-pointer transition-colors">
+                Resource <ChevronDown className="w-3.5 h-3.5" />
+              </div>
+              <a href="#find-partner" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Find Perfect Partner
+              </a>
+            </nav>
+          </div>
+
+          {/* Right Block: Call to Actions (Desktop) */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={onBookDemo}
+              className="bg-white border border-slate-300 text-slate-950 font-bold uppercase text-[10px] tracking-wider rounded-full px-5 py-2 hover:bg-slate-50 hover:border-slate-400 transition-all duration-205 select-none shadow-xs"
+            >
+              Book a demo
+            </button>
+            <button
+              onClick={onBookDemo}
+              className="bg-black text-white font-bold uppercase text-[10px] tracking-wider rounded-full px-5 py-2 border border-pink-500/80 hover:bg-slate-900 shadow-xs transition-all duration-205 select-none"
+            >
+              Start for free
+            </button>
+          </div>
+
+          {/* Mobile Hamburger Trigger */}
+          <div className="flex md:hidden items-center">
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="text-slate-650 hover:text-slate-950 focus:outline-none"
+              aria-label="Open menu"
+            >
+              <Menu className="w-5.5 h-5.5" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Drawer Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.3 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 bg-slate-900 z-50 md:hidden"
+            />
+
+            {/* Drawer Sheet */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.2 }}
+              className="fixed right-0 top-0 bottom-0 w-72 bg-white shadow-xl border-l border-slate-200 z-50 md:hidden p-5 flex flex-col justify-between"
+            >
+              <div className="space-y-5">
+                {/* Header inside drawer */}
+                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain" />
+                    <span className="font-display font-extrabold text-base text-slate-900">
+                      KickAffiliate
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-slate-400 hover:text-slate-700 focus:outline-none"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Mobile Menu Nav Links */}
+                <nav className="flex flex-col gap-3.5">
+                  {/* Mega Menu Accordion */}
+                  <div className="border-b border-slate-100 pb-3">
+                    <button
+                      onClick={() => setIsMobileMegaOpen(!isMobileMegaOpen)}
+                      className="flex items-center justify-between w-full font-bold text-slate-800 text-sm py-1"
+                    >
+                      Solutions
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          isMobileMegaOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {isMobileMegaOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden pl-3 pt-2 space-y-3"
+                        >
+                          {megaMenuData.map((col, idx) => (
+                            <div key={idx} className="space-y-1.5">
+                              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                                {col.title}
+                              </span>
+                              <ul className="space-y-1 pl-1">
+                                {col.items.map((item, itemIdx) => (
+                                  <li key={itemIdx}>
+                                    <a
+                                      href="#"
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                      className="text-xs text-slate-500 hover:text-primary block py-1"
+                                    >
+                                      {item}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <a
+                    href="#features"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
+                  >
+                    Shopify Plus
+                  </a>
+                  <a
+                    href="#pricing"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="#switch"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
+                  >
+                    Switch to KickAffiliate
+                  </a>
+                  <a
+                    href="#find-partner"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
+                  >
+                    Find Perfect Partner
+                  </a>
+                </nav>
+              </div>
+
+              {/* Drawer Bottom Actions */}
+              <div className="flex flex-col gap-2.5 border-t border-slate-100 pt-5">
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onBookDemo();
+                  }}
+                  className="font-bold text-xs text-slate-650 hover:text-slate-950 text-center py-2.5 border border-slate-200 rounded-lg bg-slate-50"
+                >
+                  Book a demo
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onBookDemo();
+                  }}
+                  className="w-full h-10 text-xs rounded-lg bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary-hover transition"
+                >
+                  Start for free
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

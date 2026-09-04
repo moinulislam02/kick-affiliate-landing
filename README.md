@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PartnerHub — Shopify Affiliate Marketing SaaS Landing Page
 
-## Getting Started
+PartnerHub is a modern, high-converting marketing landing page for a Shopify affiliate marketing SaaS product. The application is built using Next.js 14, Tailwind CSS, Framer Motion, and Mongoose (MongoDB).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Framework:** Next.js 14 (App Router), React 18, JavaScript ES6 (no TypeScript)
+- **Styling:** Tailwind CSS + CSS modules/custom keyframes
+- **Animation:** Framer Motion (for staggered reveals, floating cards, tab crossfades, responsive drawers, and accessible modals) + `react-intersection-observer` (for scroll-triggered activations)
+- **Database:** MongoDB via Mongoose
+
+---
+
+## Project Structure
+```text
+/kick-affiliate
+  /app
+    /(marketing)
+      /page.js            # Main landing page combining all section components
+    /api
+      /leads
+        /route.js         # Lead submissions (POST) and list getter (GET)
+    /layout.js            # Root layout configuring Inter & Outfit Google Fonts
+    /globals.css          # Styling rules, custom scrollbars, and keyframes
+  /components
+    /primitives           # Atomic primitives (<Button>, <Badge>, <Eyebrow>, <StatCounter>, etc.)
+    /sections             # The 13 structured landing page section components
+  /lib
+    /mongodb.js           # Mongoose singleton connection provider
+  /models
+    /Lead.js              # Lead document Mongoose schema and validations
+  /.env.local             # Local environment variables
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Pre-requisites
+- Node.js (v18.x or later)
+- npm (v9.x or later)
+- MongoDB instance (local server or remote cluster link like MongoDB Atlas)
 
-## Learn More
+### 2. Install dependencies
+Initialize packages using:
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Environment Variables Configuration
+Create a `.env.local` file at the root of the project (one is already generated for you with a local development fallback):
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/partnerhub
+```
+Replace the connection string with your active MongoDB URI (e.g., MongoDB Atlas connection string).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Running the Development Server
+Launch the development server:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 5. Production Compilation
+Generate an optimized production build:
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+To run the compiled production build locally:
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Documentation
+
+### `POST /api/leads`
+Creates a new lead in the database.
+- **Payload:**
+  ```json
+  {
+    "name": "Elena Rostova",
+    "email": "elena@glowlab.com",
+    "storeUrl": "glowlab.myshopify.com",
+    "monthlyRevenue": "over_100k"
+  }
+  ```
+- **Validation:** Ensures email follows correct standard regex formatting, names/store urls are non-empty, and monthly revenue conforms to string options: `under_50k`, `50k_100k`, or `over_100k`.
+
+### `GET /api/leads`
+Retrieves a list of all lead submissions sorted by newest first.
