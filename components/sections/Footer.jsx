@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { CheckCircle2, ShieldCheck, Heart } from 'lucide-react';
 
 export default function Footer() {
@@ -72,12 +73,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Logo & Description */}
           <div className="col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain" />
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
               <span className="font-display font-extrabold text-xl text-white tracking-tight">
                 Kick<span className="text-primary">Affiliate</span>
               </span>
-            </div>
+            </Link>
             <p className="text-xs text-slate-500 leading-relaxed max-w-[240px]">
               The highest-converting affiliate marketing SaaS for scaling Shopify merchants. Launch, track, and pay creators seamlessly.
             </p>
@@ -143,11 +144,11 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} KickAffiliate Inc. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-slate-400 transition">Privacy Policy</a>
+            <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
             <span>&bull;</span>
-            <a href="#" className="hover:text-slate-400 transition">Terms of Service</a>
+            <Link href="/terms-and-conditions" className="hover:text-white transition">Terms of Service</Link>
             <span>&bull;</span>
-            <a href="#" className="hover:text-slate-400 transition">Cookie Settings</a>
+            <a href="#" className="hover:text-white transition">Cookie Settings</a>
           </div>
           <div className="flex items-center gap-1.5 text-slate-600">
             <span>Made with</span>

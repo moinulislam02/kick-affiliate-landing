@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -46,25 +47,25 @@ export default function Header({ onBookDemo }) {
   }, []);
 
   const megaMenuFeatures = [
-    { title: 'Launch Program', icon: <Rocket className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Track & Analyze', icon: <BarChart3 className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Motivate & Activate', icon: <Megaphone className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Pay Affiliates', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Automate Process', icon: <Settings className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Launch Program', icon: <Rocket className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Track & Analyze', icon: <BarChart3 className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Motivate & Activate', icon: <Megaphone className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Pay Affiliates', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Automate Process', icon: <Settings className="w-4 h-4 text-blue-600" />, href: '/#features' },
   ];
 
   const megaMenuUseCases = [
-    { title: 'Affiliate Marketing', icon: <Users className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Influencer Marketing', icon: <Star className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Referral Marketing', icon: <ArrowLeftRight className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Partner Marketing', icon: <Handshake className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Affiliate Marketing', icon: <Users className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Influencer Marketing', icon: <Star className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Referral Marketing', icon: <ArrowLeftRight className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Partner Marketing', icon: <Handshake className="w-4 h-4 text-blue-600" />, href: '/#features' },
   ];
 
   const megaMenuIndustries = [
-    { title: 'Fashion', icon: <Shirt className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Beauty & Health', icon: <Heart className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Home & Tool', icon: <Home className="w-4 h-4 text-blue-600" />, href: '#features' },
-    { title: 'Sports', icon: <Trophy className="w-4 h-4 text-blue-600" />, href: '#features' },
+    { title: 'Fashion', icon: <Shirt className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Beauty & Health', icon: <Heart className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Home & Tool', icon: <Home className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Sports', icon: <Trophy className="w-4 h-4 text-blue-600" />, href: '/#features' },
   ];
 
   const megaMenuData = [
@@ -100,12 +101,12 @@ export default function Header({ onBookDemo }) {
           {/* Left Block: Logo + Navigation Links */}
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <div className="flex items-center gap-2.5 select-none">
-              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain" />
+            <Link href="/" className="flex items-center gap-2.5 select-none group">
+              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
               <span className="font-display font-extrabold text-lg tracking-tight text-slate-900">
                 Kick<span className="text-primary">Affiliate</span>
               </span>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
@@ -318,19 +319,19 @@ export default function Header({ onBookDemo }) {
                 </AnimatePresence>
               </div>
 
-              <a href="#features" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+              <a href="/#features" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Shopify Plus
               </a>
-              <a href="#pricing" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+              <a href="/#pricing" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Pricing
               </a>
-              <a href="#switch" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+              <a href="/#switch" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Switch to KickAffiliate
               </a>
               <div className="relative flex items-center gap-1 font-medium text-slate-850 hover:text-slate-950 text-[13px] cursor-pointer transition-colors">
                 Resource <ChevronDown className="w-3.5 h-3.5" />
               </div>
-              <a href="#find-partner" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+              <a href="/#find-partner" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Find Perfect Partner
               </a>
             </nav>
@@ -454,28 +455,28 @@ export default function Header({ onBookDemo }) {
                   </div>
 
                   <a
-                    href="#features"
+                    href="/#features"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
                     Shopify Plus
                   </a>
                   <a
-                    href="#pricing"
+                    href="/#pricing"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
                     Pricing
                   </a>
                   <a
-                    href="#switch"
+                    href="/#switch"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
                     Switch to KickAffiliate
                   </a>
                   <a
-                    href="#find-partner"
+                    href="/#find-partner"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
