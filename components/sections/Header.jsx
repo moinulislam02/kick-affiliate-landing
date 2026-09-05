@@ -25,6 +25,14 @@ import {
   Home,
   Trophy,
   Zap,
+  Link2,
+  Percent,
+  LayoutDashboard,
+  ShieldCheck,
+  Sparkles,
+  Globe,
+  Activity,
+  Coffee,
 } from 'lucide-react';
 import Button from '../primitives/Button';
 
@@ -47,42 +55,44 @@ export default function Header({ onBookDemo }) {
   }, []);
 
   const megaMenuFeatures = [
-    { title: 'Launch Program', icon: <Rocket className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Track & Analyze', icon: <BarChart3 className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Motivate & Activate', icon: <Megaphone className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Pay Affiliates', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Automate Process', icon: <Settings className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Dual Link & Code Tracking', icon: <Link2 className="w-4 h-4 text-blue-600" />, href: '/features/dual-attribution' },
+    { title: 'Tiered Commission Engine', icon: <Percent className="w-4 h-4 text-blue-600" />, href: '/features/commission-engine' },
+    { title: 'White-Label Creator Portal', icon: <LayoutDashboard className="w-4 h-4 text-blue-600" />, href: '/features/creator-portal' },
+    { title: 'Auto Payouts & Refunds', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '/features/payout-reconciliation' },
+    { title: 'Fraud Guard & Security', icon: <ShieldCheck className="w-4 h-4 text-blue-600" />, href: '/features/anti-fraud' },
   ];
 
   const megaMenuUseCases = [
-    { title: 'Affiliate Marketing', icon: <Users className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Influencer Marketing', icon: <Star className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Referral Marketing', icon: <ArrowLeftRight className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Partner Marketing', icon: <Handshake className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Influencer & Creator Programs', icon: <Sparkles className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Customer Referral Program', icon: <ArrowLeftRight className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Affiliate Publisher Networks', icon: <Globe className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Brand Ambassador Clubs', icon: <Trophy className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'B2B & Agency Partnerships', icon: <Handshake className="w-4 h-4 text-blue-600" />, href: '/features' },
   ];
 
   const megaMenuIndustries = [
-    { title: 'Fashion', icon: <Shirt className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Beauty & Health', icon: <Heart className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Home & Tool', icon: <Home className="w-4 h-4 text-blue-600" />, href: '/#features' },
-    { title: 'Sports', icon: <Trophy className="w-4 h-4 text-blue-600" />, href: '/#features' },
+    { title: 'Fashion & Apparel', icon: <Shirt className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Beauty & Cosmetics', icon: <Heart className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Health, Fitness & Wellness', icon: <Activity className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Home & Consumer Goods', icon: <Home className="w-4 h-4 text-blue-600" />, href: '/features' },
+    { title: 'Food, Beverage & DTC', icon: <Coffee className="w-4 h-4 text-blue-600" />, href: '/features' },
   ];
 
   const megaMenuData = [
     {
       title: 'By Feature',
       icon: <Rocket className="w-3.5 h-3.5 text-blue-600" />,
-      items: megaMenuFeatures.map((f) => f.title),
+      items: megaMenuFeatures,
     },
     {
       title: 'By Use Case',
       icon: <Share2 className="w-3.5 h-3.5 text-blue-600" />,
-      items: megaMenuUseCases.map((u) => u.title),
+      items: megaMenuUseCases,
     },
     {
       title: 'By Industry',
       icon: <ShoppingBag className="w-3.5 h-3.5 text-blue-600" />,
-      items: megaMenuIndustries.map((i) => i.title),
+      items: megaMenuIndustries,
     },
   ];
 
@@ -127,19 +137,19 @@ export default function Header({ onBookDemo }) {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.99 }}
                       transition={{ duration: 0.15, ease: 'easeOut' }}
-                      className="absolute left-[-120px] top-full pt-3 w-[980px] lg:w-[1020px] z-50"
+                      className="absolute left-[-160px] top-full pt-3 w-[1160px] xl:w-[1200px] z-50"
                     >
                       {/* Speech-bubble Top Caret */}
-                      <div className="absolute top-[5px] left-[152px] w-4 h-4 bg-white border-t border-l border-slate-200/90 rotate-45 z-20 shadow-xs" />
+                      <div className="absolute top-[5px] left-[192px] w-4 h-4 bg-white border-t border-l border-slate-200/90 rotate-45 z-20 shadow-xs" />
 
                       {/* Mega Menu Box */}
-                      <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200/70 border border-slate-200/90 p-8 grid grid-cols-12 gap-7 relative z-10">
+                      <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200/70 border border-slate-200/90 p-8 grid grid-cols-12 gap-6 relative z-10">
                         {/* Column 1: By Feature */}
-                        <div className="col-span-3 flex flex-col justify-between">
+                        <div className="col-span-3 flex flex-col justify-start">
                           <div>
                             {/* Column Header */}
-                            <div className="space-y-2">
-                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                            <div className="h-[108px] flex flex-col justify-start">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs mb-3 shrink-0">
                                 <Rocket className="w-4.5 h-4.5 text-blue-600" />
                               </div>
                               <div>
@@ -147,7 +157,7 @@ export default function Header({ onBookDemo }) {
                                   By Feature
                                 </span>
                                 <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
-                                  Powerful features to run and scale your affiliate program.
+                                  Zero-loss tracking, dynamic commissions, and automated payouts.
                                 </p>
                               </div>
                             </div>
@@ -159,20 +169,20 @@ export default function Header({ onBookDemo }) {
                             <ul className="space-y-1.5">
                               {megaMenuFeatures.map((item, idx) => (
                                 <li key={idx}>
-                                  <a
-                                    href={item.href || '#'}
-                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  <Link
+                                    href={item.href || '/features'}
+                                    className="flex items-center justify-between h-[40px] px-2.5 rounded-xl hover:bg-slate-50 group transition-all"
                                   >
-                                    <div className="flex items-center gap-2.5">
-                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                    <div className="flex items-center gap-2.5 min-w-0">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center shrink-0">
                                         {item.icon}
                                       </span>
-                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors whitespace-nowrap">
                                         {item.title}
                                       </span>
                                     </div>
-                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
-                                  </a>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all shrink-0 ml-1.5" />
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -180,11 +190,11 @@ export default function Header({ onBookDemo }) {
                         </div>
 
                         {/* Column 2: By Use Case */}
-                        <div className="col-span-3 flex flex-col justify-between">
+                        <div className="col-span-3 flex flex-col justify-start">
                           <div>
                             {/* Column Header */}
-                            <div className="space-y-2">
-                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                            <div className="h-[108px] flex flex-col justify-start">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs mb-3 shrink-0">
                                 <Share2 className="w-4.5 h-4.5 text-blue-600" />
                               </div>
                               <div>
@@ -192,7 +202,7 @@ export default function Header({ onBookDemo }) {
                                   By Use Case
                                 </span>
                                 <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
-                                  Use case tailored for how you grow.
+                                  Tailored workflows for creators, customer referrals, and affiliates.
                                 </p>
                               </div>
                             </div>
@@ -204,20 +214,20 @@ export default function Header({ onBookDemo }) {
                             <ul className="space-y-1.5">
                               {megaMenuUseCases.map((item, idx) => (
                                 <li key={idx}>
-                                  <a
-                                    href={item.href || '#'}
-                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  <Link
+                                    href={item.href || '/features'}
+                                    className="flex items-center justify-between h-[40px] px-2.5 rounded-xl hover:bg-slate-50 group transition-all"
                                   >
-                                    <div className="flex items-center gap-2.5">
-                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                    <div className="flex items-center gap-2.5 min-w-0">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center shrink-0">
                                         {item.icon}
                                       </span>
-                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors whitespace-nowrap">
                                         {item.title}
                                       </span>
                                     </div>
-                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
-                                  </a>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all shrink-0 ml-1.5" />
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -225,11 +235,11 @@ export default function Header({ onBookDemo }) {
                         </div>
 
                         {/* Column 3: By Industry */}
-                        <div className="col-span-3 flex flex-col justify-between">
+                        <div className="col-span-3 flex flex-col justify-start">
                           <div>
                             {/* Column Header */}
-                            <div className="space-y-2">
-                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                            <div className="h-[108px] flex flex-col justify-start">
+                              <div className="w-10 h-10 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs mb-3 shrink-0">
                                 <ShoppingBag className="w-4.5 h-4.5 text-blue-600" />
                               </div>
                               <div>
@@ -237,7 +247,7 @@ export default function Header({ onBookDemo }) {
                                   By Industry
                                 </span>
                                 <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
-                                  Built to fit your industry and your customers.
+                                  Engineered for high-growth DTC brands and Shopify Plus merchants.
                                 </p>
                               </div>
                             </div>
@@ -249,20 +259,20 @@ export default function Header({ onBookDemo }) {
                             <ul className="space-y-1.5">
                               {megaMenuIndustries.map((item, idx) => (
                                 <li key={idx}>
-                                  <a
-                                    href={item.href || '#'}
-                                    className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 group transition-all"
+                                  <Link
+                                    href={item.href || '/features'}
+                                    className="flex items-center justify-between h-[40px] px-2.5 rounded-xl hover:bg-slate-50 group transition-all"
                                   >
-                                    <div className="flex items-center gap-2.5">
-                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center">
+                                    <div className="flex items-center gap-2.5 min-w-0">
+                                      <span className="text-blue-600 w-4 h-4 flex items-center justify-center shrink-0">
                                         {item.icon}
                                       </span>
-                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                      <span className="text-[13px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors whitespace-nowrap">
                                         {item.title}
                                       </span>
                                     </div>
-                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
-                                  </a>
+                                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all shrink-0 ml-1.5" />
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -305,12 +315,12 @@ export default function Header({ onBookDemo }) {
                             </p>
 
                             {/* Bottom Link */}
-                            <a
-                              href="#features"
+                            <Link
+                              href="/features"
                               className="text-[11px] font-extrabold tracking-wider text-blue-600 hover:text-blue-700 uppercase flex items-center justify-center gap-1.5 mt-5 transition-all group-hover:translate-x-0.5"
                             >
                               See Full Features <ArrowRight className="w-3.5 h-3.5" />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -319,21 +329,18 @@ export default function Header({ onBookDemo }) {
                 </AnimatePresence>
               </div>
 
-              <a href="/#features" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
-                Shopify Plus
-              </a>
-              <a href="/#pricing" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+              <Link href="/features" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Features
+              </Link>
+              <Link href="/pricing" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Pricing
-              </a>
-              <a href="/#switch" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
-                Switch to KickAffiliate
-              </a>
-              <div className="relative flex items-center gap-1 font-medium text-slate-850 hover:text-slate-950 text-[13px] cursor-pointer transition-colors">
-                Resource <ChevronDown className="w-3.5 h-3.5" />
-              </div>
-              <a href="/#find-partner" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
-                Find Perfect Partner
-              </a>
+              </Link>
+              <Link href="/compare" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Compare
+              </Link>
+              <Link href="/contact" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Contact
+              </Link>
             </nav>
           </div>
 
@@ -437,13 +444,13 @@ export default function Header({ onBookDemo }) {
                               <ul className="space-y-1 pl-1">
                                 {col.items.map((item, itemIdx) => (
                                   <li key={itemIdx}>
-                                    <a
-                                      href="#"
+                                    <Link
+                                      href={item.href || '/features'}
                                       onClick={() => setIsMobileMenuOpen(false)}
                                       className="text-xs text-slate-500 hover:text-primary block py-1"
                                     >
-                                      {item}
-                                    </a>
+                                      {item.title}
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
@@ -454,34 +461,34 @@ export default function Header({ onBookDemo }) {
                     </AnimatePresence>
                   </div>
 
-                  <a
-                    href="/#features"
+                  <Link
+                    href="/features"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
-                    Shopify Plus
-                  </a>
-                  <a
-                    href="/#pricing"
+                    Features
+                  </Link>
+                  <Link
+                    href="/pricing"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
                     Pricing
-                  </a>
-                  <a
-                    href="/#switch"
+                  </Link>
+                  <Link
+                    href="/compare"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
-                    Switch to KickAffiliate
-                  </a>
-                  <a
-                    href="/#find-partner"
+                    Compare Apps
+                  </Link>
+                  <Link
+                    href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
-                    Find Perfect Partner
-                  </a>
+                    Contact Us
+                  </Link>
                 </nav>
               </div>
 

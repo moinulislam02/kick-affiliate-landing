@@ -8,23 +8,39 @@ export default function Footer() {
   const columns = [
     {
       title: 'Features',
-      links: ['Link Tracking', 'Commission Engine', 'Automated Payouts', 'White-label Portals'],
+      links: [
+        { label: 'Link Tracking', href: '/features' },
+        { label: 'Commission Engine', href: '/features' },
+        { label: 'Automated Payouts', href: '/features' },
+        { label: 'White-label Portals', href: '/features' },
+      ],
     },
     {
-      title: 'Use Cases',
-      links: ['Shopify Brands', 'Creator Networks', 'Influencer Hubs', 'Ambassador Programs'],
-    },
-    {
-      title: 'Compare Us',
-      links: ['vs GoAffPro', 'vs UpPromote', 'vs Refersion', 'vs Impact.com'],
-    },
-    {
-      title: 'Resources',
-      links: ['Affiliate Guides', 'API Documentation', 'Developer Tools', 'Help Center'],
+      title: 'Solutions',
+      links: [
+        { label: 'Shopify Brands', href: '/#features' },
+        { label: 'Creator Networks', href: '/features' },
+        { label: 'Influencer Hubs', href: '/features' },
+        { label: 'Pricing Plans', href: '/pricing' },
+      ],
     },
     {
       title: 'Company',
-      links: ['About KickAffiliate', 'Careers', 'Brand Kit', 'Contact Support'],
+      links: [
+        { label: 'Contact Us', href: '/contact' },
+        { label: 'Book a Demo', href: '/contact' },
+        { label: 'Terms of Service', href: '/terms-and-conditions' },
+        { label: 'Privacy Policy', href: '/privacy-policy' },
+      ],
+    },
+    {
+      title: 'Resources',
+      links: [
+        { label: 'All Features', href: '/features' },
+        { label: 'Plans & Pricing', href: '/pricing' },
+        { label: 'Comparison Hub', href: '/compare' },
+        { label: 'Help & FAQ', href: '/pricing' },
+      ],
     },
   ];
 
@@ -105,9 +121,9 @@ export default function Footer() {
               <ul className="space-y-2">
                 {col.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <a href="#" className="text-xs hover:text-white transition-colors">
-                      {link}
-                    </a>
+                    <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
