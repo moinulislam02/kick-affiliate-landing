@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Learn how KickAffiliate collects, uses, and safeguards personal information for Shopify merchants, creators, and shoppers in full compliance with GDPR, CCPA, and Shopify standards.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/privacy-policy',
+    canonical: 'https://kickaffiliate.com/privacy-policy',
   },
   keywords: [
     'KickAffiliate privacy policy',
@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Privacy Policy | KickAffiliate',
     description:
       'Learn how KickAffiliate collects, uses, and safeguards personal information for Shopify merchants, creators, and shoppers.',
-    url: 'https://kick-affiliate.techprob.org/privacy-policy',
+    url: 'https://kickaffiliate.com/privacy-policy',
     type: 'website',
     images: [
       {
@@ -47,13 +47,13 @@ export default function PrivacyPolicyPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Privacy Policy',
-        item: 'https://kick-affiliate.techprob.org/privacy-policy',
+        item: 'https://kickaffiliate.com/privacy-policy',
       },
     ],
   };
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
     '@type': 'WebPage',
     name: 'KickAffiliate Privacy Policy',
     description: 'Privacy Policy and Data Protection guidelines for KickAffiliate.',
-    url: 'https://kick-affiliate.techprob.org/privacy-policy',
+    url: 'https://kickaffiliate.com/privacy-policy',
   };
 
   return (

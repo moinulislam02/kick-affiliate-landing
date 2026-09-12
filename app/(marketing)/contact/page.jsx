@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Contact the KickAffiliate team for technical support, migration assistance from GoAffPro/UpPromote, or custom enterprise solutions for Shopify Plus brands.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/contact',
+    canonical: 'https://kickaffiliate.com/contact',
   },
   keywords: [
     'contact KickAffiliate',
@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Contact KickAffiliate | Support & Enterprise Solutions',
     description:
       'Get in touch with our Shopify affiliate growth specialists for onboarding, technical support, and migrations.',
-    url: 'https://kick-affiliate.techprob.org/contact',
+    url: 'https://kickaffiliate.com/contact',
     type: 'website',
     images: [
       {
@@ -46,13 +46,13 @@ export default function ContactPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Contact',
-        item: 'https://kick-affiliate.techprob.org/contact',
+        item: 'https://kickaffiliate.com/contact',
       },
     ],
   };
@@ -62,15 +62,15 @@ export default function ContactPage() {
     '@type': 'ContactPage',
     name: 'Contact KickAffiliate',
     description: 'Support and sales contact page for KickAffiliate Shopify app.',
-    url: 'https://kick-affiliate.techprob.org/contact',
+    url: 'https://kickaffiliate.com/contact',
     mainEntity: {
       '@type': 'Organization',
       name: 'KickAffiliate',
-      url: 'https://kick-affiliate.techprob.org',
+      url: 'https://kickaffiliate.com',
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
-        url: 'https://kick-affiliate.techprob.org/contact',
+        url: 'https://kickaffiliate.com/contact',
         availableLanguage: ['English'],
       },
     },

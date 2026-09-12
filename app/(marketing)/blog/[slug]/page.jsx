@@ -61,7 +61,7 @@ export async function generateMetadata({ params }) {
   const title = post.seoTitle || post.title;
   const description = post.seoDescription || post.subtitle || post.excerpt || '';
   const authorName = post.author?.name || post.authorName || 'KickAffiliate Editorial Team';
-  const imageUrl = post.image || 'https://kick-affiliate.techprob.org/website-hero.png';
+  const imageUrl = post.image || 'https://kickaffiliate.com/website-hero.png';
   const publishedDate = post.publishedAt || post.createdAt || new Date().toISOString();
   const modifiedDate = post.updatedAt || publishedDate;
 
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }) {
     title: `${title}`,
     description,
     alternates: {
-      canonical: `https://kick-affiliate.techprob.org/blog/${post.slug}`,
+      canonical: `https://kickaffiliate.com/blog/${post.slug}`,
     },
     keywords: [
       ...(post.tags || []),
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${title} | KickAffiliate`,
       description,
-      url: `https://kick-affiliate.techprob.org/blog/${post.slug}`,
+      url: `https://kickaffiliate.com/blog/${post.slug}`,
       type: 'article',
       publishedTime: publishedDate,
       modifiedTime: modifiedDate,
@@ -114,8 +114,8 @@ export default async function BlogPostPage({ params }) {
 
   const post = data.post;
   const authorName = post.author?.name || post.authorName || 'KickAffiliate Editorial Team';
-  const authorAvatar = post.author?.avatar || 'https://kick-affiliate.techprob.org/kick-logo-light.png';
-  const imageUrl = post.image || 'https://kick-affiliate.techprob.org/website-hero.png';
+  const authorAvatar = post.author?.avatar || 'https://kickaffiliate.com/kick-logo-light.png';
+  const imageUrl = post.image || 'https://kickaffiliate.com/website-hero.png';
   const publishedDate = post.publishedAt || post.createdAt || new Date().toISOString();
   const modifiedDate = post.updatedAt || publishedDate;
 
@@ -127,19 +127,19 @@ export default async function BlogPostPage({ params }) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://kick-affiliate.techprob.org/blog',
+        item: 'https://kickaffiliate.com/blog',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://kick-affiliate.techprob.org/blog/${post.slug}`,
+        item: `https://kickaffiliate.com/blog/${post.slug}`,
       },
     ],
   };
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }) {
     '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://kick-affiliate.techprob.org/blog/${post.slug}`,
+      '@id': `https://kickaffiliate.com/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.subtitle || post.excerpt || post.seoDescription || '',
@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }) {
       name: 'KickAffiliate',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kick-affiliate.techprob.org/kick-logo-light.png',
+        url: 'https://kickaffiliate.com/kick-logo-light.png',
       },
     },
     articleSection: post.category || 'Affiliate Strategy',

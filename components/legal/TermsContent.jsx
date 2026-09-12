@@ -402,7 +402,7 @@ export default function TermsContent() {
         <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
           <p><strong>Application:</strong> Kick Affiliate (Techprob)</p>
           <p><strong>Support &amp; Legal:</strong> <a href="mailto:support@kickaffiliate.io" className="text-primary font-bold hover:underline">support@kickaffiliate.io</a></p>
-          <p><strong>Website:</strong> <a href="https://kick-affiliate.techprob.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kick-affiliate.techprob.org</a></p>
+          <p><strong>Website:</strong> <a href="https://kickaffiliate.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kickaffiliate.com</a></p>
         </div>
       </section>
 

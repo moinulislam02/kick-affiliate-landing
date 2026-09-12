@@ -7,13 +7,13 @@ export const metadata = {
   description:
     'The affiliate marketing platform built for Shopify brands. Capture sales with zero-loss dual attribution (links + codes), reconcile refunds automatically, block self-referrals, and empower creators with white-label portals.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org',
+    canonical: 'https://kickaffiliate.com',
   },
   openGraph: {
     title: 'KickAffiliate | Track Every Influencer Sale. Protect Every Commission.',
     description:
       'The modern Shopify affiliate platform with zero-loss dual tracking, automated refund reconciliation, and white-label creator portals. 0% performance fees.',
-    url: 'https://kick-affiliate.techprob.org',
+    url: 'https://kickaffiliate.com',
     type: 'website',
     images: [
       {
@@ -38,10 +38,10 @@ export default function MarketingPage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'KickAffiliate',
-    url: 'https://kick-affiliate.techprob.org',
+    url: 'https://kickaffiliate.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://kick-affiliate.techprob.org/blog?q={search_term_string}',
+      target: 'https://kickaffiliate.com/blog?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };

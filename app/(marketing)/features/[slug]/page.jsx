@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     title: `${feature.title}`,
     description: feature.subtitle,
     alternates: {
-      canonical: `https://kick-affiliate.techprob.org/features/${feature.slug}`,
+      canonical: `https://kickaffiliate.com/features/${feature.slug}`,
     },
     keywords: [
       `${feature.title}`,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${feature.title} | KickAffiliate`,
       description: feature.subtitle,
-      url: `https://kick-affiliate.techprob.org/features/${feature.slug}`,
+      url: `https://kickaffiliate.com/features/${feature.slug}`,
       type: 'website',
       images: [
         {
@@ -71,19 +71,19 @@ export default function SingleFeaturePage({ params }) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Features',
-        item: 'https://kick-affiliate.techprob.org/features',
+        item: 'https://kickaffiliate.com/features',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: feature.title,
-        item: `https://kick-affiliate.techprob.org/features/${feature.slug}`,
+        item: `https://kickaffiliate.com/features/${feature.slug}`,
       },
     ],
   };

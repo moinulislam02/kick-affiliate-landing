@@ -10,7 +10,7 @@ export const metadata = {
   description:
     'Essays, architectural breakdowns, unit economic blueprints, and growth playbooks for modern Shopify DTC brands scaling creator and affiliate channels.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/blog',
+    canonical: 'https://kickaffiliate.com/blog',
   },
   keywords: [
     'Shopify affiliate blog',
@@ -23,7 +23,7 @@ export const metadata = {
     title: 'Blog & Perspectives | KickAffiliate - Shopify Affiliate Platform',
     description:
       'Essays, architectural breakdowns, unit economic blueprints, and growth playbooks for modern Shopify DTC brands.',
-    url: 'https://kick-affiliate.techprob.org/blog',
+    url: 'https://kickaffiliate.com/blog',
     type: 'website',
     images: [
       {
@@ -79,13 +79,13 @@ export default async function BlogPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://kick-affiliate.techprob.org/blog',
+        item: 'https://kickaffiliate.com/blog',
       },
     ],
   };
@@ -96,20 +96,20 @@ export default async function BlogPage() {
     name: 'KickAffiliate Journal & Engineering Perspectives',
     description:
       'Essays, architectural breakdowns, and growth playbooks for modern Shopify DTC brands scaling affiliate and creator programs.',
-    url: 'https://kick-affiliate.techprob.org/blog',
+    url: 'https://kickaffiliate.com/blog',
     publisher: {
       '@type': 'Organization',
       name: 'KickAffiliate',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kick-affiliate.techprob.org/kick-logo-light.png',
+        url: 'https://kickaffiliate.com/kick-logo-light.png',
       },
     },
     blogPost: posts.slice(0, 10).map((post) => ({
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.subtitle || post.excerpt || '',
-      url: `https://kick-affiliate.techprob.org/blog/${post.slug}`,
+      url: `https://kickaffiliate.com/blog/${post.slug}`,
       datePublished: post.publishedAt || new Date().toISOString(),
       author: {
         '@type': 'Person',

@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Simple, transparent pricing for growing and enterprise Shopify brands. Free Starter plan, $19/mo Pro plan with 14-day free trial, and $59/mo Scale plan with zero transaction fees.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/pricing',
+    canonical: 'https://kickaffiliate.com/pricing',
   },
   keywords: [
     'Shopify affiliate pricing',
@@ -19,7 +19,7 @@ export const metadata = {
     title: 'KickAffiliate Pricing Plans | 0% Performance Fees',
     description:
       'Simple, transparent pricing for scaling Shopify affiliate & influencer marketing. 0% performance fees, 14-day free trial.',
-    url: 'https://kick-affiliate.techprob.org/pricing',
+    url: 'https://kickaffiliate.com/pricing',
     type: 'website',
     images: [
       {
@@ -47,13 +47,13 @@ export default function PricingPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Pricing',
-        item: 'https://kick-affiliate.techprob.org/pricing',
+        item: 'https://kickaffiliate.com/pricing',
       },
     ],
   };

@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Discover KickAffiliate platform capabilities: zero-loss dual attribution, automated refund deduction, multi-tier commission engine, white-label creator portals, and enterprise anti-fraud protection for Shopify.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/features',
+    canonical: 'https://kickaffiliate.com/features',
   },
   keywords: [
     'Shopify affiliate features',
@@ -20,7 +20,7 @@ export const metadata = {
     title: 'KickAffiliate Platform Features & Technical Architecture',
     description:
       'Zero-loss dual tracking, multi-tier commissions, white-label creator portals, and automated refund reconciliation for high-growth Shopify merchants.',
-    url: 'https://kick-affiliate.techprob.org/features',
+    url: 'https://kickaffiliate.com/features',
     type: 'website',
     images: [
       {
@@ -51,31 +51,31 @@ export default function FeaturesPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Zero-Loss Dual Attribution',
-        url: 'https://kick-affiliate.techprob.org/features/dual-attribution',
+        url: 'https://kickaffiliate.com/features/dual-attribution',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Dynamic Tiered Commission Engine',
-        url: 'https://kick-affiliate.techprob.org/features/commission-engine',
+        url: 'https://kickaffiliate.com/features/commission-engine',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'White-Label Creator Portal',
-        url: 'https://kick-affiliate.techprob.org/features/creator-portal',
+        url: 'https://kickaffiliate.com/features/creator-portal',
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: 'Automated Refund & Payout Reconciliation',
-        url: 'https://kick-affiliate.techprob.org/features/payout-reconciliation',
+        url: 'https://kickaffiliate.com/features/payout-reconciliation',
       },
       {
         '@type': 'ListItem',
         position: 5,
         name: 'Enterprise Anti-Fraud & Self-Referral Shield',
-        url: 'https://kick-affiliate.techprob.org/features/anti-fraud',
+        url: 'https://kickaffiliate.com/features/anti-fraud',
       },
     ],
   };
@@ -88,13 +88,13 @@ export default function FeaturesPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Features',
-        item: 'https://kick-affiliate.techprob.org/features',
+        item: 'https://kickaffiliate.com/features',
       },
     ],
   };

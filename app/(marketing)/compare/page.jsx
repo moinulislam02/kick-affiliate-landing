@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Compare KickAffiliate to GoAffPro, UpPromote, Refersion, and BixGrow. Discover why modern Shopify merchants choose KickAffiliate for 0% extra fees and sub-second webhook tracking.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/compare',
+    canonical: 'https://kickaffiliate.com/compare',
   },
   keywords: [
     'Shopify affiliate app comparison',
@@ -20,7 +20,7 @@ export const metadata = {
     title: 'KickAffiliate vs Shopify Affiliate Competitors',
     description:
       'Compare KickAffiliate with legacy affiliate apps. See feature breakdowns, pricing transparency, and zero-fee unit economics.',
-    url: 'https://kick-affiliate.techprob.org/compare',
+    url: 'https://kickaffiliate.com/compare',
     type: 'website',
     images: [
       {
@@ -49,13 +49,13 @@ export default function ComparePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Compare',
-        item: 'https://kick-affiliate.techprob.org/compare',
+        item: 'https://kickaffiliate.com/compare',
       },
     ],
   };
@@ -69,25 +69,25 @@ export default function ComparePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'KickAffiliate vs GoAffPro',
-        url: 'https://kick-affiliate.techprob.org/compare/vs-goaffpro',
+        url: 'https://kickaffiliate.com/compare/vs-goaffpro',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'KickAffiliate vs UpPromote',
-        url: 'https://kick-affiliate.techprob.org/compare/vs-uppromote',
+        url: 'https://kickaffiliate.com/compare/vs-uppromote',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'KickAffiliate vs Refersion',
-        url: 'https://kick-affiliate.techprob.org/compare/vs-refersion',
+        url: 'https://kickaffiliate.com/compare/vs-refersion',
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: 'KickAffiliate vs BixGrow',
-        url: 'https://kick-affiliate.techprob.org/compare/vs-bixgrow',
+        url: 'https://kickaffiliate.com/compare/vs-bixgrow',
       },
     ],
   };

@@ -17,7 +17,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://kick-affiliate.techprob.org'),
+  metadataBase: new URL('https://kickaffiliate.com'),
   title: {
     default: 'KickAffiliate | Shopify Affiliate & Creator Marketing Platform',
     template: '%s | KickAffiliate',
@@ -37,7 +37,7 @@ export const metadata = {
     'affiliate fraud prevention',
     'Shopify Plus affiliate software',
   ],
-  authors: [{ name: 'KickAffiliate Team', url: 'https://kick-affiliate.techprob.org' }],
+  authors: [{ name: 'KickAffiliate Team', url: 'https://kickaffiliate.com' }],
   creator: 'KickAffiliate',
   publisher: 'KickAffiliate',
   formatDetection: {
@@ -48,7 +48,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://kick-affiliate.techprob.org',
+    url: 'https://kickaffiliate.com',
     siteName: 'KickAffiliate',
     title: 'KickAffiliate | Shopify Affiliate Marketing Platform',
     description:
@@ -91,7 +91,7 @@ export const metadata = {
     apple: '/kick-affiliate.png',
   },
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org',
+    canonical: 'https://kickaffiliate.com',
   },
   category: 'business',
 };
@@ -102,12 +102,12 @@ export default function RootLayout({ children }) {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://kick-affiliate.techprob.org/#organization',
+        '@id': 'https://kickaffiliate.com/#organization',
         name: 'KickAffiliate',
-        url: 'https://kick-affiliate.techprob.org',
+        url: 'https://kickaffiliate.com',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://kick-affiliate.techprob.org/kick-logo-light.png',
+          url: 'https://kickaffiliate.com/kick-logo-light.png',
         },
         sameAs: [
           'https://www.facebook.com/kickaffiliate',
@@ -118,7 +118,7 @@ export default function RootLayout({ children }) {
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': 'https://kick-affiliate.techprob.org/#software',
+        '@id': 'https://kickaffiliate.com/#software',
         name: 'KickAffiliate',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Shopify',

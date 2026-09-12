@@ -2,7 +2,7 @@
 import { featureData } from '@/data/featureData';
 import { blogPosts as fallbackPosts } from '@/data/blogData';
 
-const BASE_URL = 'https://kick-affiliate.techprob.org';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kickaffiliate.com';
 
 async function getBlogSlugs() {
   try {

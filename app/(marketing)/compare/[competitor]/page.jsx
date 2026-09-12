@@ -31,7 +31,7 @@ export function generateMetadata({ params }) {
     title,
     description,
     alternates: {
-      canonical: `https://kick-affiliate.techprob.org/compare/${params.competitor}`,
+      canonical: `https://kickaffiliate.com/compare/${params.competitor}`,
     },
     keywords: [
       `KickAffiliate vs ${compName}`,
@@ -43,7 +43,7 @@ export function generateMetadata({ params }) {
     openGraph: {
       title: `KickAffiliate vs ${compName} - Full Feature & Pricing Breakdown`,
       description: `See why Shopify merchants are switching from ${compName} to KickAffiliate for zero fees and reliable tracking.`,
-      url: `https://kick-affiliate.techprob.org/compare/${params.competitor}`,
+      url: `https://kickaffiliate.com/compare/${params.competitor}`,
       type: 'website',
       images: [
         {
@@ -78,19 +78,19 @@ export default function CompetitorComparePage({ params }) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Compare',
-        item: 'https://kick-affiliate.techprob.org/compare',
+        item: 'https://kickaffiliate.com/compare',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: `KickAffiliate vs ${compName}`,
-        item: `https://kick-affiliate.techprob.org/compare/${params.competitor}`,
+        item: `https://kickaffiliate.com/compare/${params.competitor}`,
       },
     ],
   };
@@ -100,7 +100,7 @@ export default function CompetitorComparePage({ params }) {
     '@type': 'WebPage',
     name: `KickAffiliate vs ${compName} Comparison`,
     description: `Detailed comparison and migration guide between KickAffiliate and ${compName} for Shopify stores.`,
-    url: `https://kick-affiliate.techprob.org/compare/${params.competitor}`,
+    url: `https://kickaffiliate.com/compare/${params.competitor}`,
   };
 
   return (

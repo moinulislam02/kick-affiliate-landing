@@ -8,7 +8,7 @@ export default function robots() {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://kick-affiliate.techprob.org/sitemap.xml',
-    host: 'https://kick-affiliate.techprob.org',
+    sitemap: 'https://kickaffiliate.com/sitemap.xml',
+    host: 'https://kickaffiliate.com',
   };
 }

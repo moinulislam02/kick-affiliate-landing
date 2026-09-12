@@ -6,7 +6,7 @@ export const metadata = {
   description:
     'Read the complete terms and conditions of service for KickAffiliate, covering merchant accounts, creator responsibilities, commission attribution, and Shopify billing.',
   alternates: {
-    canonical: 'https://kick-affiliate.techprob.org/terms-and-conditions',
+    canonical: 'https://kickaffiliate.com/terms-and-conditions',
   },
   keywords: [
     'KickAffiliate terms of service',
@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Terms and Conditions | KickAffiliate',
     description:
       'Read the complete terms and conditions of service for KickAffiliate platform users, merchants, and affiliates.',
-    url: 'https://kick-affiliate.techprob.org/terms-and-conditions',
+    url: 'https://kickaffiliate.com/terms-and-conditions',
     type: 'website',
     images: [
       {
@@ -47,13 +47,13 @@ export default function TermsPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kick-affiliate.techprob.org',
+        item: 'https://kickaffiliate.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Terms and Conditions',
-        item: 'https://kick-affiliate.techprob.org/terms-and-conditions',
+        item: 'https://kickaffiliate.com/terms-and-conditions',
       },
     ],
   };
@@ -63,7 +63,7 @@ export default function TermsPage() {
     '@type': 'WebPage',
     name: 'KickAffiliate Terms and Conditions',
     description: 'Terms and conditions for KickAffiliate Shopify app and creator platform.',
-    url: 'https://kick-affiliate.techprob.org/terms-and-conditions',
+    url: 'https://kickaffiliate.com/terms-and-conditions',
   };
 
   return (
