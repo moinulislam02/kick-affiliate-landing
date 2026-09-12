@@ -55,7 +55,7 @@ export default function Hero({ onBookDemo }) {
 
           {/* Subtitle description */}
           <p className="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed font-normal">
-            The affiliate platform built for Shopify merchants who don't want to pay creators for orders that get refunded, cancelled, or faked.
+            The affiliate platform built for Shopify merchants who don&apos;t want to pay creators for orders that get refunded, cancelled, or faked.
           </p>
 
           {/* Left-Aligned Action buttons */}

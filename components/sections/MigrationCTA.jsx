@@ -88,7 +88,7 @@ export default function MigrationCTA({ onBookDemo }) {
               Switch From Other Affiliate Apps, Simply
             </h2>
             <p className="text-sm sm:text-base text-muted leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-              Starting fresh with a new affiliate app doesn't have to mean losing momentum. Connect your Shopify store, recreate your commission structure, and start inviting your existing creators most merchants are up and running the same day.
+              Starting fresh with a new affiliate app doesn&apos;t have to mean losing momentum. Connect your Shopify store, recreate your commission structure, and start inviting your existing creators most merchants are up and running the same day.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <Button variant="primary" onClick={onBookDemo} className="w-full sm:w-auto shadow-sm">

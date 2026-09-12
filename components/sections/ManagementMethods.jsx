@@ -18,7 +18,7 @@ export default function ManagementMethods() {
             </h2>
             <div className="space-y-4 text-slate-500 font-medium text-sm sm:text-base leading-relaxed">
               <p>
-                Manage affiliates and influencers at whatever scale fits your brand. Assign different commission structures to different creator tiers, track individual performance, and see exactly who's driving revenue all from one dashboard.
+                Manage affiliates and influencers at whatever scale fits your brand. Assign different commission structures to different creator tiers, track individual performance, and see exactly who&apos;s driving revenue all from one dashboard.
               </p>
             </div>
             <div className="pt-2 flex justify-center lg:justify-start">
