@@ -9,7 +9,7 @@ export default function FeatureTestimonials() {
     {
       stars: 5,
       quote:
-        'The dual-tracking system saved us thousands in missing commissions. Our creators love the passwordless portal, and automated refund deductions prevent any payout headaches.',
+        'The dual-tracking system saved us thousands in missing commissions. Our creators love the self-serve portal, and automated refund deductions prevent any payout headaches.',
       name: 'Marcus Vance',
       role: 'Head of Growth, Sol Apparel',
       storeType: 'Shopify Plus • Apparel DTC',

@@ -9,17 +9,17 @@ import Button from '../primitives/Button';
 
 export default function EnterpriseStats({ onBookDemo }) {
   const stats = [
-    { end: 85, prefix: '$', suffix: 'M+', label: 'Sales Processed' },
-    { end: 12000, suffix: '+', label: 'Active Merchants' },
-    { end: 150, suffix: 'k+', label: 'Affiliates Onboarded' },
+    { end: 500, prefix: '$', suffix: 'K+', label: 'Sales Processed' },
+    { end: 1000, suffix: '+', label: 'Active Merchants' },
+    { end: 900, suffix: '+', label: 'Affiliates Onboarded' },
     { end: 99, suffix: '.9%', label: 'Attribution Uptime' },
   ];
 
   const features = [
     {
       icon: <BarChart3 className="w-5 h-5 text-primary" />,
-      title: 'Deep Pixel Integrations',
-      description: 'Stream conversion and attribution values directly to Facebook Pixel, TikTok Pixel, and GA4 for unified ad optimization.',
+      title: 'Fraud Guard Monitoring',
+      description: 'Identify click spamming, coupon abuse, and self-referrals automatically flagged directly in your dashboard.',
       visual: (
         <div className="bg-indigo-950 p-4 rounded-xl border border-indigo-900 flex items-center justify-between text-xs text-indigo-200">
           <span className="font-semibold text-white">Pixel Sync Status</span>
@@ -29,8 +29,8 @@ export default function EnterpriseStats({ onBookDemo }) {
     },
     {
       icon: <Globe className="w-5 h-5 text-primary" />,
-      title: 'Global Payout Options',
-      description: 'Support checkout in multiple currencies. Automatically convert and pay affiliate commissions in USD, EUR, GBP, or CAD.',
+      title: 'Commission Protection at Scale',
+      description: 'Whether you\'re running 5 creators or 500, every order goes through the same delivery-based hold and refund-adjustment logic, no manual oversight required per order.',
       visual: (
         <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center justify-between text-xs text-slate-300">
           <span>Supported Currencies</span>
@@ -44,8 +44,8 @@ export default function EnterpriseStats({ onBookDemo }) {
     },
     {
       icon: <Lock className="w-5 h-5 text-primary" />,
-      title: 'Fraud Guard Monitoring',
-      description: 'Identify click spamming, discount code abuse, and self-referrals. Automatically flag suspicious activities in your dashboard queue.',
+      title: 'Real-Time Affiliate Tracking',
+      description: 'Track clicks, orders, revenue, conversion rates, and commissions across your creator campaigns.',
       visual: (
         <div className="bg-indigo-900 p-4 rounded-xl border border-indigo-850 flex items-center justify-between text-xs text-indigo-100">
           <div className="flex items-center gap-1.5">
@@ -65,10 +65,10 @@ export default function EnterpriseStats({ onBookDemo }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-xl space-y-4 text-center md:text-left">
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-              Scale to Millions in Affiliate Revenue
+              Built to Track More. Protect More. Grow Smarter.
             </h2>
             <p className="text-base text-muted leading-relaxed">
-              Enterprise capability built with small-business simplicity. Scale your ambassador and influencer channels securely without complex infrastructure.
+              Everything you need to manage creator affiliate sales—with better visibility and stronger commission control.
             </p>
           </div>
           <div className="flex justify-center md:justify-end flex-shrink-0">

@@ -99,7 +99,7 @@ export default function ContactForm({ onBookDemo }) {
           </p>
           <button
             onClick={onBookDemo}
-            className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+            className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
           >
             <span>Book a 15-Min Live Demo</span>
           </button>

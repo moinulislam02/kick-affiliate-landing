@@ -120,9 +120,9 @@ export default function FeaturePillars({ onBookDemo }) {
       badge: 'Creator Experience',
       title: 'White-Label Self-Serve Creator Portal',
       description:
-        'Deliver an exceptional experience for your creators. Affiliates log in with fast passwordless magic links to generate deep links, track conversions, and input their PayPal/bank details.',
+        'Deliver an exceptional experience for your creators. Affiliates set their password on initial login to generate deep links, track conversions, and view live approved balances.',
       bullets: [
-        'Passwordless login via 1-click magic link or secure OTP codes',
+        'Secure email & password authentication with first-time password setup',
         'Instant copy buttons for referral links and custom discount codes',
         'Real-time earnings ledger with obfuscated shopper data for privacy',
         'Downloadable media kit repository (banners, logos, copy captions)',
@@ -156,26 +156,26 @@ export default function FeaturePillars({ onBookDemo }) {
     {
       id: 'payout-reconciliation',
       badge: 'Financial Reconciliation',
-      title: '1-Click Payouts & Auto Refund Deductions',
+      title: 'Refund Reconciliation & Commission Management',
       description:
         'Never pay commissions on returned items or cancelled orders. KickAffiliate automatically syncs with Shopify order events and holds pending balances during your store return window.',
       bullets: [
         'Automated return and refund reconciliation via Shopify webhooks',
         'Customizable commission hold periods (e.g. 14, 30, or 60 days)',
-        '1-Click bulk payout marking with clean audit log ledgers',
-        'Export ready-to-upload CSV files for PayPal MassPay or direct bank wires',
+        'Manual verification workflows with transparent audit logs',
+        'Live creator balance tracking and deduction histories',
       ],
       visual: (
         <div className="bg-white rounded-2xl p-5 border border-slate-200 text-slate-900 space-y-3.5 shadow-sm">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 text-xs font-bold">
-            <span>Payout Settlement Ledger</span>
-            <span className="text-slate-500 text-[11px]">Ready to Export</span>
+            <span>Commission Ledger</span>
+            <span className="text-slate-500 text-[11px]">Live Balances</span>
           </div>
 
           <div className="space-y-2 text-xs">
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200/80 flex items-center justify-between">
               <div>
-                <p className="font-bold text-slate-900">Total Unpaid Balance</p>
+                <p className="font-bold text-slate-900">Total Approved Balance</p>
                 <p className="text-[11px] text-slate-500">12 Creators approved</p>
               </div>
               <span className="font-mono font-bold text-emerald-600 text-sm">$3,420.00</span>

@@ -89,18 +89,6 @@ export const featureData = {
         mockupType: 'attribution-stream',
       },
       {
-        badge: 'Smart Token Persistence',
-        title: 'Cross-Device & Cross-Browser Token Retention',
-        description:
-          'Utilizes first-party cookies and localStorage tokens to maintain attribution across sessions, even when modern browsers restrict third-party cookies or purge caches.',
-        bullets: [
-          'First-party storage bypasses third-party cookie restrictions',
-          'Configurable cookie lifespan from 1 day to 365 days',
-          'Cart note_attribute tagging for uncrackable audit trails',
-        ],
-        mockupType: 'token-ledger',
-      },
-      {
         badge: 'Webhook Engine',
         title: 'Real-Time Sub-Second Order Reconciliation',
         description:
@@ -293,28 +281,28 @@ export const featureData = {
     slug: 'creator-portal',
     badge: 'Creator Experience',
     breadcrumb: 'Creator Portal',
-    title: 'White-Label Self-Serve Creator Portal with Zero Login Friction',
+    title: 'White-Label Self-Serve Creator Portal for Easy Link & Performance Tracking',
     subtitle:
-      'Give creators a branded dashboard where they can generate tracking links, copy discount codes, access creative brand assets, and view live earnings.',
+      'Give creators a branded dashboard where they can set up their password, generate tracking links, copy discount codes, access creative brand assets, and view live earnings.',
     heroStats: [
-      { label: 'Login Method', value: 'Magic Link & OTP' },
-      { label: 'Branding', value: '100% White-Label' },
+      { label: 'Account Setup', value: 'Set Password on 1st Login' },
+      { label: 'Login Access', value: 'Email & Password' },
       { label: 'Asset Sharing', value: 'Built-in Media Kit' },
     ],
     journeyTitle: 'Deliver an exceptional self-serve creator experience',
-    journeySubtitle: 'Empower creators to self-manage links, creative assets, and payment preferences.',
+    journeySubtitle: 'Empower creators to self-manage links, creative assets, and track their referral earnings.',
     journeyStages: [
       {
         stage: 'Stage 1',
-        title: 'Frictionless Registration',
-        desc: 'Creators sign up via your branded landing page with instant or manual merchant approval workflows.',
-        points: ['Custom form fields', 'Auto-generated welcome email', 'Instant discount code provisioning'],
+        title: 'Frictionless Registration & Invites',
+        desc: 'Creators sign up via your branded landing page or are directly added and invited from your merchant admin.',
+        points: ['Custom signup forms', 'Direct merchant invite provisioning', 'Instant discount code setup'],
       },
       {
         stage: 'Stage 2',
-        title: 'Passwordless Magic Login',
-        desc: 'No passwords to remember. Creators log in via 1-click email magic links or secure one-time passcode.',
-        points: ['1-click secure login', 'Zero forgotten password tickets', 'Mobile-optimized dashboard'],
+        title: 'First-Time Password Setup & Login',
+        desc: 'When creators join or are added for the first time, they set their account password upon initial login, then easily log in with email and password anytime.',
+        points: ['One-time initial password setup', 'Secure email & password authentication', 'Mobile-optimized dashboard access'],
       },
       {
         stage: 'Stage 3',
@@ -324,33 +312,33 @@ export const featureData = {
       },
       {
         stage: 'Stage 4',
-        title: 'Live Analytics & Payout Setup',
-        desc: 'Creators track clicks, conversions, pending balances, and submit their preferred PayPal or bank details.',
-        points: ['Real-time earnings ledger', 'Privacy-compliant customer data', 'PayPal/Bank detail management'],
+        title: 'Live Analytics & Performance Ledger',
+        desc: 'Creators track clicks, conversions, pending balances, and monitor approved commission earnings in real-time.',
+        points: ['Real-time earnings ledger', 'Privacy-compliant customer data', 'Transparent commission records'],
       },
     ],
     milestones: {
       tag: 'Creator Engagement',
-      title: 'Empower creators with a professional, frictionless portal',
+      title: 'Empower creators with a professional, self-serve portal',
       description:
-        'When creators have instant access to links, analytics, and asset kits, they post 3x more frequently and drive 2.4x higher conversion rates.',
+        'When creators have direct access to links, analytics, and asset kits, they post 3x more frequently and drive 2.4x higher conversion rates.',
       stats: [
         { value: '3x', label: 'More Frequent Creator Posts' },
-        { value: '98%', label: 'Creator Portal Login Success' },
+        { value: '100%', label: 'White-Label Portal Branding' },
         { value: '< 2min', label: 'Average Onboarding Time' },
-        { value: '0', label: 'Password Reset Support Tickets' },
+        { value: '24/7', label: 'Self-Serve Creator Access' },
       ],
     },
     benefits: [
       {
         icon: 'LayoutDashboard',
         title: '100% Custom White-Label',
-        desc: 'Match your brand typography, colors, and logo for a cohesive merchant experience.',
+        desc: 'Match your brand typography, colors, and logo for a cohesive creator experience.',
       },
       {
-        icon: 'Zap',
-        title: 'Passwordless Magic Links',
-        desc: 'Affiliates log in instantly with email verification links — no forgotten password headaches.',
+        icon: 'ShieldCheck',
+        title: 'Secure Account Access',
+        desc: 'Creators set their password on first login and securely access their dashboard with email and password anytime.',
       },
       {
         icon: 'Link2',
@@ -359,20 +347,20 @@ export const featureData = {
       },
       {
         icon: 'Wallet',
-        title: 'Self-Serve Payment Info',
-        desc: 'Creators manage their own PayPal email or direct deposit details securely.',
+        title: 'Transparent Earnings Dashboard',
+        desc: 'Creators monitor real-time referral clicks, order conversions, and approved commission balances.',
       },
     ],
     deepDives: [
       {
-        badge: 'Seamless Access',
-        title: 'Passwordless Magic Link & OTP Authentication',
+        badge: 'Secure Login',
+        title: 'Direct First-Time Password Setup & Secure Login',
         description:
-          'Password friction is the #1 reason affiliates stop promoting products. With KickAffiliate, creators enter their email and receive an instant magic link or 6-digit OTP code to log in immediately.',
+          'Onboarding is simple and secure. When a creator signs up or is added from your merchant admin, they set up their password on their first login attempt. Afterwards, they simply log in with their email and password whenever they want to check performance.',
         bullets: [
-          'Zero password management or forgotten credentials',
-          'Encrypted session tokens with automatic expiry',
-          'Responsive UI designed for smartphone browsers',
+          'Intuitive first-time password setup for new and invited creators',
+          'Standard secure email & password login for daily access',
+          'Responsive dashboard designed for mobile and desktop browsers',
         ],
         mockupType: 'magic-login',
       },
@@ -419,8 +407,8 @@ export const featureData = {
         a: 'Yes, the creator portal is 100% white-label. You can configure your store logo, primary brand color, and portal greeting.',
       },
       {
-        q: 'How do creators log in without a password?',
-        a: 'Creators enter their registered email address and receive an instant secure magic link or 6-digit one-time code to log in securely.',
+        q: 'How do creators set up their account and log in?',
+        a: 'When a creator joins through your registration page or is added directly from your merchant admin, they set their account password on their first login. For all subsequent visits, they securely log in with their registered email and password.',
       },
       {
         q: 'Can creators generate links to specific product pages?',
@@ -436,13 +424,13 @@ export const featureData = {
   'payout-reconciliation': {
     slug: 'payout-reconciliation',
     badge: 'Financial Reconciliation',
-    breadcrumb: 'Payouts & Reconciliation',
-    title: '1-Click Batch Payouts with Automated Refund Deductions',
+    breadcrumb: 'Refunds & Commission Tracking',
+    title: 'Automated Refund Reconciliation & Commission Management',
     subtitle:
-      'Never pay commissions on returned items or cancelled orders. KickAffiliate automatically syncs with Shopify refunds and settles balances via PayPal or CSV bank exports.',
+      'Never pay commissions on returned items or cancelled orders. KickAffiliate automatically tracks Shopify refunds, voids cancelled commissions, and maintains clear balance ledgers for your creator network.',
     heroStats: [
-      { label: 'Refund Sync', value: 'Automatic' },
-      { label: 'Payout Methods', value: 'PayPal & CSV' },
+      { label: 'Refund Sync', value: 'Real-Time Webhooks' },
+      { label: 'Return Protection', value: '100% Protected' },
       { label: 'Hold Window', value: 'Configurable (14-90d)' },
     ],
     journeyTitle: 'Streamline affiliate financial reconciliation',
@@ -456,55 +444,55 @@ export const featureData = {
       },
       {
         stage: 'Stage 2',
-        title: 'Automated Refund Deduction',
-        desc: 'When a customer returns an item in Shopify, KickAffiliate automatically recalculates or voids the unpaid commission.',
-        points: ['Webhook return detection', 'Partial refund proportional math', 'Transparent audit reason logging'],
+        title: 'Automated Refund Reconciliation',
+        desc: 'When a customer returns or cancels an order in Shopify, KickAffiliate automatically detects the webhook event and voids the unpaid commission.',
+        points: ['Webhook return detection', 'Instant commission voiding', 'Transparent audit reason logging'],
       },
       {
         stage: 'Stage 3',
-        title: '1-Click Batch Settlement',
-        desc: 'Select approved creators and generate a PayPal MassPay file or export formatted CSVs for direct bank transfers.',
-        points: ['1-Click batch marking', 'PayPal MassPay CSV export', 'Direct bank wire formatting'],
+        title: 'Commission Review & Payout Tracking',
+        desc: 'Review approved creator balances and maintain clean, transparent records as you issue payouts according to your schedule.',
+        points: ['Manual verification workflows', 'Individual creator balance tracking', 'Clean payout status updates'],
       },
       {
         stage: 'Stage 4',
-        title: 'Instant Receipts & Audit Trails',
-        desc: 'Creators receive automated payout receipts, while your merchant dashboard maintains clean financial logs for accounting.',
-        points: ['Automated creator email notification', 'Permanent transaction history', 'One-click tax report exports'],
+        title: 'Transparent Ledgers & Audit Trails',
+        desc: 'Creators see accurate, updated balance breakdowns inside their portal, while your merchant dashboard maintains full financial logs for accounting.',
+        points: ['Live creator portal balance sync', 'Permanent transaction history', 'Detailed deduction logs'],
       },
     ],
     milestones: {
       tag: 'Accounting Accuracy',
       title: 'Eliminate overpayments with automated refund reconciliation',
       description:
-        'Merchants save an average of 8-14% on total affiliate payouts by automatically adjusting commissions on customer returns.',
+        'Merchants save an average of 8-14% on total affiliate spend by automatically adjusting commissions on customer returns.',
       stats: [
         { value: '8-14%', label: 'Saved in Prevented Overpayments' },
-        { value: '1-Click', label: 'Batch Payout Settlement' },
-        { value: '100%', label: 'Automated Return Reconciliation' },
-        { value: '0 hrs', label: 'Spent on Manual Payout Spreadsheets' },
+        { value: 'Real-Time', label: 'Refund Reconciliation' },
+        { value: '100%', label: 'Order Attribution Accuracy' },
+        { value: '0 hrs', label: 'Spent on Manual Refund Calculations' },
       ],
     },
     benefits: [
       {
         icon: 'Wallet',
         title: 'Auto Refund Deductions',
-        desc: 'Webhook sync listens to Shopify return events and instantly deducts commissions from pending creator balances.',
+        desc: 'Webhook sync listens to Shopify return events and instantly voids or deducts commissions from pending creator balances.',
       },
       {
         icon: 'ShieldCheck',
         title: 'Configurable Hold Windows',
-        desc: 'Hold commissions for 14, 30, or 60 days so payouts are only released after your store return window closes.',
+        desc: 'Hold commissions for 14, 30, or 60 days so commissions are only finalized after your store return window closes.',
       },
       {
         icon: 'Zap',
-        title: '1-Click PayPal & Bank Export',
-        desc: 'Export pre-formatted PayPal MassPay files or generic CSVs for direct wire settlement in one click.',
+        title: 'Transparent Balance Tracking',
+        desc: 'Track live pending, approved, and paid commission balances for each creator in your dashboard.',
       },
       {
         icon: 'Percent',
-        title: 'Partial Return Proportional Math',
-        desc: 'If a customer returns 1 out of 3 items, the commission recalculates proportionally to the kept subtotal.',
+        title: 'Zero-Overpayment Protection',
+        desc: 'Never pay commissions on unfulfilled, cancelled, or returned orders with automated order state sync.',
       },
     ],
     deepDives: [
@@ -512,23 +500,23 @@ export const featureData = {
         badge: 'Automated Sync',
         title: 'Shopify Return & Refund Webhook Reconciliation',
         description:
-          'When an order is cancelled or refunded in Shopify Admin, KickAffiliate intercepts the webhook event in real-time. If the commission is pending, it is automatically reduced or cancelled with a clear audit trail.',
+          'When an order is cancelled or refunded in Shopify Admin, KickAffiliate intercepts the webhook event in real-time. If the commission is pending, it is automatically voided with a clear audit trail.',
         bullets: [
-          'Automatic partial and full refund reconciliation',
-          'Line-item return math protects profit margins',
+          'Automatic cancellation and refund detection via Shopify webhooks',
+          'Instant commission voiding protects store profit margins',
           'Full audit log with original Shopify order and refund IDs',
         ],
         mockupType: 'refund-ledger',
       },
       {
-        badge: 'Batch Payouts',
-        title: '1-Click Batch Payouts & MassPay Export',
+        badge: 'Payout Tracking',
+        title: 'Clear Commission & Payout Status Management',
         description:
-          'Settle hundreds of affiliates in under 60 seconds. Generate PayPal MassPay batch files with creator emails and owed balances, or mark them as paid with a single click.',
+          'Keep your creator finances organized with intuitive balance tracking. Review approved earnings, mark payouts as fulfilled, and provide creators with complete visibility over their earnings.',
         bullets: [
-          'Ready-to-upload PayPal MassPay CSV exports',
-          'Bank wire and Wise-compatible settlement spreadsheets',
-          'Instant status change from Pending to Paid across all records',
+          'Real-time pending vs. approved balance ledgers',
+          'Straightforward payout status updates across all creators',
+          'Transparent earnings visibility inside creator portals',
         ],
         mockupType: 'payout-batch',
       },
@@ -536,7 +524,7 @@ export const featureData = {
         badge: 'Risk Mitigation',
         title: 'Customizable Commission Hold Periods',
         description:
-          'Protect cash flow by locking commissions until your store return policy expires (e.g., 30 days after fulfillment). Only finalized orders qualify for payout batches.',
+          'Protect cash flow by locking commissions until your store return policy expires (e.g., 30 days after fulfillment). Only finalized orders qualify for approved status.',
         bullets: [
           'Configurable hold period (14, 30, 45, or 60 days)',
           'Clear release dates displayed in creator portal',
@@ -546,12 +534,12 @@ export const featureData = {
       },
       {
         badge: 'Financial Reporting',
-        title: 'Comprehensive Tax & Accounting Ledgers',
+        title: 'Comprehensive Ledger & Deduction Records',
         description:
-          'Export complete financial ledgers containing creator tax IDs, historical payouts, deduction logs, and gross driven volume for end-of-year tax reporting.',
+          'Maintain complete financial records containing historical earnings, deduction logs, and gross driven volume for store accounting and reporting.',
         bullets: [
-          'Downloadable CSVs for QuickBooks, Xero, and accountants',
-          'Tax compliance tracking with creator details',
+          'Detailed deduction and refund logs',
+          'Historical earnings ledgers with creator details',
           'Detailed lifetime merchant spend breakdown',
         ],
         mockupType: 'tax-reports',
@@ -560,19 +548,19 @@ export const featureData = {
     faqs: [
       {
         q: 'What happens if an order is refunded after the commission has already been paid?',
-        a: 'If a commission was already paid, KickAffiliate applies a negative balance credit to the creator’s ledger, automatically offsetting their next payout.',
+        a: 'If a commission was already paid out, KickAffiliate records a negative deduction on the creator’s balance ledger, automatically offsetting subsequent referral earnings.',
       },
       {
-        q: 'Can I use PayPal MassPay to pay all my creators at once?',
-        a: 'Yes! KickAffiliate generates a 1-click PayPal MassPay CSV that you can upload directly to PayPal to pay all creators simultaneously.',
+        q: 'How do I review and verify commissions before issuing payouts?',
+        a: 'You can review all pending referral orders directly in your KickAffiliate dashboard, inspect order details, and approve or reject commissions with one click.',
       },
       {
-        q: 'Can I set a minimum payout threshold?',
-        a: 'Yes, you can set a minimum payout threshold (e.g. $50). Creators whose balances are below the threshold roll over to the next billing cycle.',
+        q: 'How do hold windows protect my store from refund losses?',
+        a: 'Hold windows lock commissions for a configurable duration (such as 30 days) matching your store return policy, ensuring you only finalize commissions once orders are past the return period.',
       },
       {
-        q: 'How does partial refund calculation work?',
-        a: 'If a customer returns $30 worth of products from a $100 order, KickAffiliate recalculates the creator’s commission based on the remaining $70 subtotal.',
+        q: 'What happens when a customer returns or cancels an order?',
+        a: 'KickAffiliate immediately receives the Shopify cancellation webhook and automatically marks the associated commission as voided, preventing any payout from being issued.',
       },
     ],
   },

@@ -14,14 +14,11 @@ export default function ManagementMethods() {
           {/* Left Column: Management Methods Copy */}
           <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight text-balance">
-              Diverse management methods
+              Manage Every Creator, Your Way
             </h2>
             <div className="space-y-4 text-slate-500 font-medium text-sm sm:text-base leading-relaxed">
               <p>
-                Manage and motivate affiliates at ease. We provide multiple touch points within the reward system that encourage your affiliates to reach better results such as tier-based commissions and bonuses.
-              </p>
-              <p>
-                Also, you can manage the team professionally with our advanced features to chat and email them automatically.
+                Manage affiliates and influencers at whatever scale fits your brand. Assign different commission structures to different creator tiers, track individual performance, and see exactly who's driving revenue all from one dashboard.
               </p>
             </div>
             <div className="pt-2 flex justify-center lg:justify-start">

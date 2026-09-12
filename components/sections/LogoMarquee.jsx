@@ -62,15 +62,15 @@ const bottomPillars = [
   },
   {
     icon: <DataBackedIcon />,
-    title: 'Data-backed Solution',
+    title: 'Commission Protection',
   },
   {
     icon: <ScalabilityIcon />,
-    title: 'Scalability for Growth',
+    title: 'Real-Time Creator Analytics',
   },
   {
     icon: <StrategicSupportIcon />,
-    title: 'Strategic Support',
+    title: '24/7 Support',
   },
 ];
 
@@ -120,7 +120,7 @@ export default function LogoMarquee() {
       {/* Title Header */}
       <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 mb-12 text-center">
         <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight leading-tight">
-          Trusted by <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500 font-extrabold">250,000+</span> customers across the globe
+          Trusted by <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500 font-extrabold">1000+</span> merchants across the globe
         </h3>
       </div>
 

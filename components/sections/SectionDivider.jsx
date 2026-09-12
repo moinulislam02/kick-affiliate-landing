@@ -18,11 +18,11 @@ export default function SectionDivider() {
             <div className="w-px h-8 bg-slate-800 mb-2" />
             
             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block font-mono">
-              THE SHIFT TO ORGANIC CHANNEL GROWTH
+              NO MORE COMMISSION RISK
             </span>
             
             <blockquote className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-slate-100 leading-relaxed tracking-tight text-balance">
-              &ldquo;Traditional advertising is hitting a wall. Customer acquisition costs are up 60% year-over-year. PartnerHub helps you build an organic referral engine that turns customer loyalty into your <span className="text-indigo-400 italic font-semibold">most predictable, cost-efficient growth driver</span>.&rdquo;
+              &ldquo;Affiliate programs fail merchants in one specific way: they get paid out before anyone knows if the order actually sticks. Kick Affiliate closes that gap commission only gets released once a merchant reviews and approves it, and any refund that lands before approval is automatically deducted.&rdquo;
             </blockquote>
           </div>
         </FadeInOnScroll>

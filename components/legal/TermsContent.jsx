@@ -207,7 +207,7 @@ export default function TermsContent() {
         <ul className="list-disc list-inside space-y-2 text-xs text-slate-600 pl-2">
           <li><strong>Attribution Mechanics:</strong> Commissions are attributed using cookies/local storage (<code className="text-slate-800 bg-slate-100 px-1 py-0.5 rounded">_ref_creator</code>) and Shopify order webhooks. Kick Affiliate is not liable for sales unrecorded due to browser ad-blockers, private modes, or custom checkout scripts.</li>
           <li><strong>Cancellations &amp; Fraud:</strong> If a referred order is voided or flagged fraudulent, the associated commission is automatically adjusted or cancelled.</li>
-          <li><strong>Returns &amp; Refunds:</strong> For full or partial refunds, commissions are scaled back or reversed per Merchant store settings.</li>
+          <li><strong>Returns &amp; Refunds:</strong> When orders are returned or cancelled, associated unpaid commissions are voided per Merchant store settings.</li>
           <li><strong>Holding Periods:</strong> Merchants may enforce holding windows (e.g., 30 days) to accommodate delivery confirmation and return window expiration before commissions convert to approved balances.</li>
         </ul>
       </section>

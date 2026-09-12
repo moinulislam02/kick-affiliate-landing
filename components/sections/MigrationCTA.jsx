@@ -82,23 +82,23 @@ export default function MigrationCTA({ onBookDemo }) {
           {/* Left Column: Migration CTA Details */}
           <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-primary/10 border border-primary/20 text-primary">
-              FREE MIGRATION ASSISTANCE
+              Easy Setup
             </div>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-              Switch From Legacy Apps Seamlessly
+              Switch From Other Affiliate Apps, Simply
             </h2>
             <p className="text-sm sm:text-base text-muted leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-              Don’t let historic data hold you back. Our engineering team handles complete payouts, affiliate, and campaign history imports from GoAffPro, Refersion, or UpPromote with zero server downtime.
+              Starting fresh with a new affiliate app doesn't have to mean losing momentum. Connect your Shopify store, recreate your commission structure, and start inviting your existing creators most merchants are up and running the same day.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <Button variant="primary" onClick={onBookDemo} className="w-full sm:w-auto shadow-sm">
-                Schedule migration call
+                Install on Shopify
               </Button>
               <button
                 onClick={onBookDemo}
                 className="font-bold text-sm text-slate-700 hover:text-primary transition-all flex items-center gap-1"
               >
-                Explore migration guide <ArrowRight className="w-4 h-4" />
+                Explore Setup Guide <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>

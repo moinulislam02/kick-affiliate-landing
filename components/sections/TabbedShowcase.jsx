@@ -265,7 +265,7 @@ export default function TabbedShowcase() {
               LAUNCH
             </span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-              Start new affiliate channel
+              Launch a New Program in a Few Clicks
             </h2>
           </div>
 

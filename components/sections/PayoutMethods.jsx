@@ -139,19 +139,19 @@ export default function PayoutMethods() {
                         </div>
                       </div>
 
-                      {/* Gateways Status Sync */}
+                      {/* Balance Status Sync */}
                       <div className="space-y-2">
                         <div className="flex justify-between text-slate-400 font-bold uppercase tracking-wider border-b border-slate-100 pb-1">
-                          <span>Gateway Sync</span>
-                          <span className="text-right">Status</span>
+                          <span>Balance Status</span>
+                          <span className="text-right">Ledger</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="font-semibold text-slate-800">PayPal Payouts</span>
-                          <span className="text-emerald-600 font-bold">Active</span>
+                          <span className="font-semibold text-slate-800">Pending Holds</span>
+                          <span className="text-amber-600 font-bold">14-Day Hold</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="font-semibold text-slate-800">Wise Batch</span>
-                          <span className="text-emerald-600 font-bold">Active</span>
+                          <span className="font-semibold text-slate-800">Approved Balance</span>
+                          <span className="text-emerald-600 font-bold">Ready</span>
                         </div>
                       </div>
 
@@ -185,22 +185,19 @@ export default function PayoutMethods() {
           {/* Right Column: Payout Methods Copy */}
           <div className="lg:col-span-5 space-y-6 text-center lg:text-left order-1 lg:order-2">
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight text-balance">
-              Frictionless payouts
+              Pay Creators With Confidence, Not Guesswork
             </h2>
             <div className="space-y-4 text-slate-500 font-medium text-sm sm:text-base leading-relaxed">
               <p>
-                Send batch payments globally in a single click. Keep affiliates happy and motivated by supporting multiple payout methods including PayPal, Wise, and bank wires with automated scheduling rules.
-              </p>
-              <p>
-                No more manual spreadsheets or validation checks. KickAffiliate handles the calculations and runs automated fraud auditing before every release.
+                Track every creator&apos;s payment status—paid, pending, reserved, approved, cancelled, or refunded in one dashboard. Release payouts only after you&apos;ve reviewed and approved them.
               </p>
             </div>
             <div className="pt-2 flex justify-center lg:justify-start">
               <a
-                href="#timeline"
+                href="/features/payout-reconciliation"
                 className="inline-flex items-center gap-1.5 font-bold text-sm text-primary hover:text-primary-dark transition group"
               >
-                Discover payment automation
+                Explore refund &amp; payout tracking
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

@@ -9,62 +9,57 @@ import Button from '../primitives/Button';
 export default function FeaturePricingSummary({ onBookDemo }) {
   const plans = [
     {
-      name: 'Free',
+      name: 'Starter',
       price: '$0',
       period: '/month',
-      desc: 'For stores launching their first affiliate program.',
+      desc: 'Everything you need to launch and test your affiliate program.',
       highlighted: false,
       features: [
-        'Up to $1,000 monthly affiliate sales',
-        'Unlimited active affiliates',
-        'Dual link & coupon tracking',
-        'Standard creator portal',
+        '5 active creators',
+        '1 active program',
+        'Unlimited Referral Orders',
+        'Full Dashboard Access',
+        'Direct login to Creator Portal',
+        'Email Notification & 24/7 support',
       ],
       cta: 'Start for Free',
     },
     {
-      name: 'Growth',
-      price: '$29',
-      period: '/month',
-      desc: 'For scaling DTC brands growing creator partnerships.',
-      highlighted: false,
-      features: [
-        'Up to $5,000 monthly affiliate sales',
-        'Multi-tier commission engine',
-        'Custom affiliate registration page',
-        'Email notifications & triggers',
-      ],
-      cta: 'Start 14-Day Free Trial',
-    },
-    {
       name: 'Pro',
-      price: '$79',
+      price: '$19',
       period: '/month',
-      desc: 'Our most popular plan for established Shopify brands.',
+      desc: 'Grow your sales with advanced management and custom commission rules.',
       highlighted: true,
       badge: 'Most Popular',
       features: [
-        'Up to $20,000 monthly affiliate sales',
-        'Automated refund reconciliation',
-        '1-Click batch PayPal MassPay exports',
-        'VIP creator overrides & media kits',
-        'Anti-fraud self-referral blocker',
+        'Up to 50 active creators',
+        'Up to 10 active programs',
+        'Custom registration image backdrop',
+        'Advanced commission overrides',
+        'Full Creator Analytics & Reports',
+        'Automated discount codes creation',
+        'Affiliate portal access',
+        'Priority email & chat support',
       ],
       cta: 'Start 14-Day Free Trial',
     },
     {
-      name: 'Enterprise',
-      price: '$199',
+      name: 'Scale Premium',
+      price: '$59',
       period: '/month',
-      desc: 'For high-volume Shopify Plus stores.',
+      desc: 'For high-volume brands requiring tailored scale, automation, and control.',
       highlighted: false,
       features: [
-        'Unlimited monthly affiliate sales',
-        'Custom domain portal (e.g. creators.brand.com)',
-        'Dedicated onboarding manager',
-        'Custom webhook integrations & SLA',
+        'Unlimited active creators',
+        'Unlimited active programs',
+        'Custom registration image backdrop',
+        'Automated Refund & Return Protection',
+        'Full Creator Analytics & Reports',
+        'Dedicated account manager',
+        'Priority API & webhook integrations',
+        '24/7 VIP priority support',
       ],
-      cta: 'Contact Sales',
+      cta: 'Upgrade to Premium',
     },
   ];
 
@@ -84,8 +79,8 @@ export default function FeaturePricingSummary({ onBookDemo }) {
           </p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* 3 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, idx) => (
             <div
               key={idx}

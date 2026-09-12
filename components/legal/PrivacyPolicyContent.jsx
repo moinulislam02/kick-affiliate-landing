@@ -177,7 +177,7 @@ export default function PrivacyPolicyContent() {
             </h3>
             <ul className="list-disc list-inside space-y-1 text-xs text-slate-600 pl-2">
               <li><strong>Account &amp; Profile Data:</strong> Full name, email address, phone number, company name, address (city, state, zip), and social media handles.</li>
-              <li><strong>Authentication Credentials:</strong> Password hashes, magic login tokens, and one-time password (OTP) verification records.</li>
+              <li><strong>Authentication Credentials:</strong> Password hashes, session tokens, and account access records.</li>
               <li><strong>Payout &amp; Banking Details:</strong> Preferred payout method (PayPal email address, bank name, account name, account number, routing number) voluntarily provided for commission settlements.</li>
               <li><strong>Tracking Identifiers:</strong> Assigned referral tokens (<code className="text-slate-800 bg-slate-100 px-1 py-0.5 rounded">?ref=TOKEN</code>), Shopify discount codes, and commission history.</li>
             </ul>

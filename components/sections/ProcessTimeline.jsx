@@ -30,30 +30,30 @@ export default function ProcessTimeline() {
   const steps = [
     {
       number: '01',
-      title: 'Onboard new affiliates',
+      title: 'Onboard Creators',
       description:
-        'New creators or influencers receive custom links and personalized coupons - all generated automatically the moment they join your program.',
+        'New influencers and affiliates get their own profile and a unique coupon code the moment they join your program.',
       image: '/images/process/step-01-onboard.svg',
     },
     {
       number: '02',
-      title: 'Confirm referred sales',
+      title: 'Track Referred Sales',
       description:
-        'New orders get recorded and commissions get calculated accordingly. Real-time data is reflected on dashboard for both affiliates and merchants.',
+        'Orders are recorded and commission is calculated automatically. Both you and the creator see performance update in real time.',
       image: '/images/process/step-02-sales.svg',
     },
     {
       number: '03',
-      title: 'Pay affiliates - on time',
+      title: 'Review & Approve Payouts',
       description:
-        'Schedule payouts via PayPal or bank wires on approval. Set minimum thresholds and release payouts automatically with automated tax documents.',
+        'Commission stays reserved after delivery. You review and approve the payout and if a refund lands before approval, commission is deducted automatically.',
       image: '/images/process/step-03-payouts.svg',
     },
     {
       number: '04',
-      title: 'Scale & track growth',
+      title: 'Scale & Analyze Growth',
       description:
-        'Automatically upgrade top performers to VIP commission tiers. Monitor real-time conversion rates and maximize your creator revenue flywheel.',
+        'Track ROI per creator, spot your best performers, and expand the programs that are actually driving revenue.',
       image: '/images/process/step-04-scale.svg',
     },
   ];

@@ -34,10 +34,10 @@ export default function PricingPageClient() {
             {/* Title Header */}
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-slate-950 tracking-tight leading-[1.1]">
-                Plans Built to Scale Your Affiliate Channel
+                Simple, transparent pricing
               </h1>
               <p className="text-xs sm:text-base text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
-                No hidden transaction fees. No complicated tiers. Choose the plan that fits your current store volume and upgrade as you grow.
+                Choose the plan that fits your business scale. Save 20% with yearly billing.
               </p>
             </div>
 

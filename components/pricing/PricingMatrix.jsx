@@ -1,166 +1,355 @@
 'use client';
 
-import React from 'react';
-import { Check, Minus, Info } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronDown, PlusCircle, MinusCircle } from 'lucide-react';
 
 export default function PricingMatrix() {
+  const [showComparison, setShowComparison] = useState(true);
+  const [collapsedCategories, setCollapsedCategories] = useState({
+    pricing: false,
+    programSettings: false,
+    recruitment: false,
+    protection: false,
+  });
+
+  const toggleCategory = (key) => {
+    setCollapsedCategories((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const categories = [
     {
-      name: 'Tracking & Attribution',
+      id: 'pricing',
+      name: 'Pricing',
       rows: [
-        { feature: 'Active Creators Limit', starter: 'Up to 10', pro: 'Unlimited', premium: 'Unlimited' },
-        { feature: 'Dual Attribution (Link + Code)', starter: true, pro: true, premium: true },
-        { feature: 'Custom Tracking Cookie Window', starter: '30 Days fixed', pro: '1 - 365 Days', premium: '1 - 365 Days' },
-        { feature: 'Shopify Automatic Coupon Code Sync', starter: true, pro: true, premium: true },
-        { feature: 'Product Deep-Link Generator', starter: false, pro: true, premium: true },
-        { feature: 'Cart Attribute Tagging', starter: true, pro: true, premium: true },
+        {
+          name: 'Recurring fee',
+          desc: 'Billed monthly or annually',
+          starter: 'Free',
+          pro: '$19/mo ($15/mo billed yearly)',
+          premium: '$59/mo ($47/mo billed yearly)',
+        },
+        {
+          name: 'Performance fee',
+          desc: '% of successful referral sales',
+          starter: 'None',
+          pro: 'None',
+          premium: 'None',
+        },
       ],
     },
     {
-      name: 'Commissions & Rules Engine',
+      id: 'programSettings',
+      name: 'Program Settings',
       rows: [
-        { feature: 'Commission Programs Supported', starter: '1 Program', pro: 'Unlimited', premium: 'Unlimited' },
-        { feature: 'Percentage & Fixed Amount Rates', starter: true, pro: true, premium: true },
-        { feature: 'Individual Creator Custom Overrides', starter: false, pro: true, premium: true },
-        { feature: 'Product / Collection-Specific Rules', starter: false, pro: true, premium: true },
-        { feature: 'Milestone & Performance Bonuses', starter: false, pro: true, premium: true },
-        { feature: 'Auto-Hold Return & Refund Period', starter: '14 Days', pro: 'Custom (0-90 days)', premium: 'Custom (0-90 days)' },
+        {
+          name: 'Program / offer limit',
+          desc: 'Number of active commission campaigns',
+          starter: '1 active program',
+          pro: '10 active programs',
+          premium: 'Unlimited',
+        },
+        {
+          name: 'Referral orders',
+          desc: 'Tracked order volume & sales attribution',
+          starter: 'Unlimited',
+          pro: 'Unlimited',
+          premium: 'Unlimited',
+        },
+        {
+          name: 'Dashboard access',
+          desc: 'Full access to metrics, charts, and reports',
+          starter: 'Full access',
+          pro: 'Full access',
+          premium: 'Full access',
+        },
+        {
+          name: 'Commission rates on order values',
+          desc: 'Percentage or fixed-amount rates',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Custom commission rate overrides per creator',
+          desc: 'Override default rates with individual custom creator rates',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Special product commission',
+          desc: 'Define rates per specific product',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Exclude products/collections from commission',
+          desc: 'Prevent commissions on selected items',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Auto tier commission',
+          desc: 'Increase commission based on performance tiers',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Lifetime commission',
+          desc: 'Reward affiliates on subsequent recurring buys',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'New customer commission',
+          desc: 'Pay higher rates strictly on first-time buyers',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Subscription order commission',
+          desc: 'Integrate rates directly on recurring orders',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Special coupon commission',
+          desc: 'Custom coupon code attribution matches',
+          starter: false,
+          pro: false,
+          premium: true,
+        },
       ],
     },
     {
-      name: 'Creator Experience & Portal',
+      id: 'recruitment',
+      name: 'Creator Management & Analytics',
       rows: [
-        { feature: 'Self-Serve Creator Dashboard', starter: true, pro: true, premium: true },
-        { feature: 'Passwordless Magic-Link / OTP Login', starter: true, pro: true, premium: true },
-        { feature: 'White-Label Branding (Logos & Colors)', starter: false, pro: true, premium: true },
-        { feature: 'Custom Portal Subdomain', starter: false, pro: false, premium: true },
-        { feature: 'Brand Marketing Assets Repository', starter: false, pro: true, premium: true },
-        { feature: 'Creator Payout Details Submission (PayPal/Bank)', starter: true, pro: true, premium: true },
+        {
+          name: 'Active creator limits',
+          desc: 'Number of registered affiliates in list',
+          starter: '5 creators',
+          pro: '50 creators',
+          premium: 'Unlimited',
+        },
+        {
+          name: 'Detailed Creator Analytics & Reports',
+          desc: 'Daily sales performance charts, orders ledger, and date breakdowns',
+          starter: false,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Direct login to Creator Portal',
+          desc: 'Secure email and password login for registered creators',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Email Notification',
+          desc: 'Automated welcome and milestone emails',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Customer support',
+          desc: 'Technical and merchant assistance',
+          starter: '24/7 support',
+          pro: 'Priority 24/7 support',
+          premium: 'Dedicated manager & 24/7',
+        },
+        {
+          name: 'Affiliate signup page',
+          desc: 'Landing page configuration',
+          starter: 'Standard',
+          pro: 'Customizable',
+          premium: 'Branded + Custom Domain',
+        },
+        {
+          name: 'Affiliate portal dashboard',
+          desc: 'Creator dashboard logins',
+          starter: 'Full access',
+          pro: 'Branded portal',
+          premium: 'Branded portal + API',
+        },
       ],
     },
     {
-      name: 'Payouts & Financial Accounting',
+      id: 'protection',
+      name: 'Fraud & Refund Protection',
       rows: [
-        { feature: 'Automatic Refund Reconciliation', starter: true, pro: true, premium: true },
-        { feature: '1-Click Batch Payout Status Ledger', starter: true, pro: true, premium: true },
-        { feature: 'PayPal MassPay CSV Export', starter: false, pro: true, premium: true },
-        { feature: 'Bank Transfer / Wire Export Format', starter: false, pro: true, premium: true },
-        { feature: 'Additional App Transaction Fees', starter: '0%', pro: '0%', premium: '0%' },
-      ],
-    },
-    {
-      name: 'Integrations, Security & Support',
-      rows: [
-        { feature: 'Shopify Embedded App Bridge', starter: true, pro: true, premium: true },
-        { feature: 'Lightweight Theme App Embed (<8kb)', starter: true, pro: true, premium: true },
-        { feature: 'Fraud Guard (Anti-Self-Referral)', starter: false, pro: true, premium: true },
-        { feature: 'REST API & Webhooks Access', starter: false, pro: false, premium: true },
-        { feature: 'Multi-Store & Currency Sync', starter: false, pro: false, premium: true },
-        { feature: 'Customer Support', starter: 'Email (24-48h)', pro: 'Priority Live Chat & Email (<2h)', premium: 'Dedicated Manager (SLA <1h)' },
+        {
+          name: 'Automated Webhook Refund & Return Protection',
+          desc: 'Auto-detects Shopify customer refunds & cancellations to protect unpaid commissions',
+          starter: false,
+          pro: false,
+          premium: true,
+        },
+        {
+          name: 'Manual referral order verification',
+          desc: 'Approve or reject commissions before payout batches',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Anti-fraud & self-referral checks',
+          desc: 'Prevent creators from earning commission on own purchases',
+          starter: true,
+          pro: true,
+          premium: true,
+        },
+        {
+          name: 'Custom portal domain & API webhook integration',
+          desc: 'Host affiliate portal on your own domain with direct API endpoints',
+          starter: false,
+          pro: false,
+          premium: true,
+        },
+        {
+          name: 'Dedicated Account Manager',
+          desc: '1-on-1 strategy sessions and priority technical assistance',
+          starter: false,
+          pro: false,
+          premium: true,
+        },
       ],
     },
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-3">
-        <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-950">
-          Compare All Plan Features
-        </h3>
-        <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
-          Detailed breakdown of capabilities across all KickAffiliate subscription tiers.
-        </p>
+    <div className="space-y-10 max-w-[1200px] mx-auto">
+      {/* Toggle Comparison Button */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setShowComparison((prev) => !prev)}
+          className="bg-white hover:bg-primary/5 text-primary border border-primary/30 hover:border-primary px-6 py-3 rounded-full text-sm font-bold transition-all shadow-xs flex items-center gap-2 cursor-pointer"
+        >
+          {showComparison ? (
+            <MinusCircle className="w-4 h-4 text-primary" />
+          ) : (
+            <PlusCircle className="w-4 h-4 text-primary" />
+          )}
+          <span>{showComparison ? 'Hide plan comparison' : 'Compare plan features'}</span>
+        </button>
       </div>
 
-      <div className="overflow-x-auto rounded-3xl border border-slate-200/80 bg-white shadow-xs">
-        <table className="w-full text-left text-xs border-collapse">
-          {/* Header */}
-          <thead>
-            <tr className="border-b border-slate-200 bg-slate-50/80">
-              <th className="p-4 sm:p-5 w-1/3 font-display font-bold text-slate-900 text-sm">
-                Features &amp; Capabilities
-              </th>
-              <th className="p-4 sm:p-5 text-center font-display font-bold text-slate-900 text-sm w-1/5">
-                Starter
-                <span className="block text-xs font-normal text-slate-500">$0/mo</span>
-              </th>
-              <th className="p-4 sm:p-5 text-center font-display font-bold text-primary text-sm w-1/5 bg-primary/5 border-x border-primary/20">
-                Pro (Growth)
-                <span className="block text-xs font-normal text-primary/80">$29/mo</span>
-              </th>
-              <th className="p-4 sm:p-5 text-center font-display font-bold text-slate-900 text-sm w-1/5">
-                Premium / Plus
-                <span className="block text-xs font-normal text-slate-500">$99/mo</span>
-              </th>
-            </tr>
-          </thead>
+      {showComparison && (
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          {/* Header Row */}
+          <div className="grid grid-cols-12 bg-slate-100/90 border-b border-slate-200 p-4 sm:p-5 font-display font-extrabold text-xs sm:text-sm text-slate-900">
+            <div className="col-span-6 md:col-span-5">Features &amp; Capabilities</div>
+            <div className="col-span-2 text-center text-slate-800">
+              Starter
+              <span className="block text-[11px] font-normal text-slate-500">$0/mo</span>
+            </div>
+            <div className="col-span-2 text-center text-primary bg-primary/10 -my-4 sm:-my-5 py-4 sm:py-5 px-2 border-x border-primary/20">
+              Pro
+              <span className="block text-[11px] font-normal text-primary">$19/mo</span>
+            </div>
+            <div className="col-span-2 md:col-span-3 text-center text-slate-800">
+              Scale Premium
+              <span className="block text-[11px] font-normal text-slate-500">$59/mo</span>
+            </div>
+          </div>
 
-          {/* Body */}
-          <tbody className="divide-y divide-slate-100">
-            {categories.map((cat, catIdx) => (
-              <React.Fragment key={catIdx}>
-                {/* Category Header Row */}
-                <tr className="bg-slate-100/70">
-                  <td
-                    colSpan={4}
-                    className="p-3.5 px-5 font-display font-bold text-xs uppercase tracking-wider text-slate-800"
-                  >
+          {/* Categories */}
+          {categories.map((cat) => {
+            const isCollapsed = collapsedCategories[cat.id];
+
+            return (
+              <div key={cat.id} className="border-b border-slate-200 last:border-b-0">
+                {/* Category Header */}
+                <button
+                  onClick={() => toggleCategory(cat.id)}
+                  className="w-full bg-slate-50 hover:bg-slate-100/80 p-4 px-6 flex justify-between items-center transition-colors cursor-pointer border-b border-slate-200/60"
+                >
+                  <span className="font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider text-primary">
                     {cat.name}
-                  </td>
-                </tr>
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-primary transition-transform duration-200 ${
+                      isCollapsed ? '' : 'rotate-180'
+                    }`}
+                  />
+                </button>
 
-                {/* Items in Category */}
-                {cat.rows.map((row, rowIdx) => (
-                  <tr key={rowIdx} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="p-4 px-5 font-medium text-slate-800">
-                      {row.feature}
-                    </td>
+                {/* Category Rows */}
+                {!isCollapsed && (
+                  <div className="divide-y divide-slate-100">
+                    {cat.rows.map((row, rowIdx) => (
+                      <div
+                        key={rowIdx}
+                        className="grid grid-cols-12 items-center hover:bg-slate-50/60 transition-colors text-xs sm:text-sm"
+                      >
+                        {/* Feature name & desc */}
+                        <div className="col-span-6 md:col-span-5 p-4 px-6">
+                          <div className="font-bold text-slate-900">{row.name}</div>
+                          {row.desc && (
+                            <div className="text-[11px] text-slate-500 font-normal mt-0.5 leading-snug">
+                              {row.desc}
+                            </div>
+                          )}
+                        </div>
 
-                    {/* Starter */}
-                    <td className="p-4 text-center text-slate-600">
-                      {typeof row.starter === 'boolean' ? (
-                        row.starter ? (
-                          <Check className="w-4 h-4 text-emerald-600 mx-auto" />
-                        ) : (
-                          <Minus className="w-4 h-4 text-slate-300 mx-auto" />
-                        )
-                      ) : (
-                        <span className="font-semibold text-slate-900">{row.starter}</span>
-                      )}
-                    </td>
+                        {/* Starter Value */}
+                        <div className="col-span-2 p-4 text-center font-medium text-slate-700">
+                          {typeof row.starter === 'boolean' ? (
+                            row.starter ? (
+                              <span className="text-primary font-black text-base">✓</span>
+                            ) : (
+                              <span className="text-slate-300 font-bold text-base">—</span>
+                            )
+                          ) : (
+                            <span className="font-semibold text-slate-900">{row.starter}</span>
+                          )}
+                        </div>
 
-                    {/* Pro */}
-                    <td className="p-4 text-center text-slate-900 font-semibold bg-primary/5 border-x border-primary/15">
-                      {typeof row.pro === 'boolean' ? (
-                        row.pro ? (
-                          <Check className="w-4 h-4 text-primary mx-auto stroke-[2.5]" />
-                        ) : (
-                          <Minus className="w-4 h-4 text-slate-300 mx-auto" />
-                        )
-                      ) : (
-                        <span className="text-primary font-bold">{row.pro}</span>
-                      )}
-                    </td>
+                        {/* Pro Value (Highlighted) */}
+                        <div className="col-span-2 p-4 text-center font-bold text-primary bg-primary/5 border-x border-primary/15 h-full flex items-center justify-center">
+                          {typeof row.pro === 'boolean' ? (
+                            row.pro ? (
+                              <span className="text-primary font-black text-base">✓</span>
+                            ) : (
+                              <span className="text-slate-300 font-bold text-base">—</span>
+                            )
+                          ) : (
+                            <span className="text-primary font-bold">{row.pro}</span>
+                          )}
+                        </div>
 
-                    {/* Premium */}
-                    <td className="p-4 text-center text-slate-600">
-                      {typeof row.premium === 'boolean' ? (
-                        row.premium ? (
-                          <Check className="w-4 h-4 text-emerald-600 mx-auto" />
-                        ) : (
-                          <Minus className="w-4 h-4 text-slate-300 mx-auto" />
-                        )
-                      ) : (
-                        <span className="font-semibold text-slate-900">{row.premium}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                        {/* Scale Premium Value */}
+                        <div className="col-span-2 md:col-span-3 p-4 text-center font-medium text-slate-700">
+                          {typeof row.premium === 'boolean' ? (
+                            row.premium ? (
+                              <span className="text-primary font-black text-base">✓</span>
+                            ) : (
+                              <span className="text-slate-300 font-bold text-base">—</span>
+                            )
+                          ) : (
+                            <span className="font-semibold text-slate-900">{row.premium}</span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

@@ -10,18 +10,18 @@ export default function ProductDashboard() {
   const points = [
     {
       icon: <Activity className="w-5 h-5 text-primary" />,
-      title: 'Real-Time Click Tracking',
-      description: 'Observe visitor interactions, referral sources, and order checkout paths instantly as they happen.',
+      title: 'Real-Time Performance Tracking',
+      description: 'See clicks, orders, revenue, and conversion rate update as they happen, per creator and per campaign.',
     },
     {
       icon: <UserCheck className="w-5 h-5 text-primary" />,
-      title: 'Automated Partner Onboarding',
-      description: 'Review custom questionnaires and check social account profiles automatically based on threshold filters.',
+      title: 'Fraud & Suspicious Activity Detection',
+      description: 'Automatically flag fake orders, bot-generated traffic, and coupon abuse, so you can block commission before it\'s paid.',
     },
     {
       icon: <CheckCircle className="w-5 h-5 text-primary" />,
-      title: 'Return Adjustment Engine',
-      description: 'Cancel pending rewards automatically when orders are returned, avoiding overpayments.',
+      title: 'Automatic Refund Adjustment',
+      description: 'If an order is refunded or cancelled before commission is approved for payout, Kick automatically deducts it no manual math.',
     },
   ];
 
@@ -32,10 +32,10 @@ export default function ProductDashboard() {
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Eyebrow>TRACK</Eyebrow>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Centralize Your Affiliate Command Center
+            Your Complete Affiliate Command Center
           </h2>
           <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            Monitor partner applications, revenue charts, and transaction audits within a unified dashboard interface.
+            Monitor campaign performance, creator activity, and commission status in one unified dashboard, built specifically to catch what other affiliate trackers miss.
           </p>
         </div>
 

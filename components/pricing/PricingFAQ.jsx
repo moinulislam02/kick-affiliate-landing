@@ -9,27 +9,43 @@ export default function PricingFAQ() {
   const faqs = [
     {
       q: 'How does the 14-day free trial work?',
-      a: 'You can install KickAffiliate and test any of our paid plans for 14 days completely free. You will not be billed until the 14-day trial concludes. You can change plans or cancel at any time directly through your Shopify App admin.',
+      a: 'When you upgrade to the Pro plan, you get full access to all Pro features for 14 days without charge. You can cancel at any time during the trial to avoid charges.',
     },
     {
-      q: 'Are there any hidden transaction fees on referred sales?',
-      a: 'No. Unlike some competitors that take a 1% - 3% cut on every referral order, KickAffiliate charges 0% extra transaction fees. You keep 100% of your store revenue.',
+      q: 'Can I change my plan or cancel at any time?',
+      a: 'Yes, you can upgrade, downgrade, or cancel your subscription directly from this page at any time. Changes will be reflected on your next Shopify billing cycle.',
     },
     {
-      q: 'How is billing processed?',
-      a: 'All subscription charges are processed through Shopify Official Billing API. Your subscription charge appears as a single unified line item on your regular Shopify monthly invoice.',
+      q: 'What happens if I exceed the creator limit on the Free plan?',
+      a: "If you have 5 active creators and want to approve more, you'll need to upgrade to the Pro or Premium plan. We'll notify you when you reach the limit.",
     },
     {
-      q: 'Can I migrate my existing creators from GoAffPro, UpPromote, or Refersion?',
-      a: 'Yes! You can export your creator list and active coupon codes as a CSV and import them directly into KickAffiliate in under 3 minutes with zero downtime for your creators.',
+      q: 'Are there any hidden transaction fees on commissions?',
+      a: 'No. We do not charge any transaction fees or commission cuts on your affiliate sales. You only pay the flat subscription fee of your selected plan.',
     },
     {
-      q: 'How does KickAffiliate handle customer returns and refunds?',
-      a: 'When an order is refunded, cancelled, or returned in Shopify, KickAffiliate receives a real-time webhook and automatically deducts or reverses the calculated commission before you pay out your creators.',
+      q: 'How is affiliate tracking verified?',
+      a: 'Affiliate tracking is handled via URL parameters (ref=token) and unique Shopify discount codes. Transactions are captured securely via Shopify webhooks and verified against active rules.',
     },
     {
-      q: 'Do you offer custom pricing or migration assistance for Shopify Plus stores?',
-      a: 'Yes. For high-volume Shopify Plus stores with large creator networks, we provide a dedicated account manager, custom onboarding, and free migration assistance.',
+      q: 'How does annual billing work and how much do I save?',
+      a: 'With annual billing, you pay upfront for the full year and save over 20% compared to monthly billing ($180/year vs $228/year on Pro, and $564/year vs $708/year on Scale Premium). You get all plan features with locked-in discounted pricing.',
+    },
+    {
+      q: 'What is the difference between active programs on Starter, Pro, and Scale?',
+      a: 'On the Starter plan, you can run 1 active campaign at a time. The Pro plan allows up to 10 simultaneously active campaigns (e.g., separate campaigns for TikTok, YouTube, or seasonal sales), and the Scale Premium plan offers unlimited active programs with no restrictions.',
+    },
+    {
+      q: 'What is Automated Refund & Return Protection on the Scale plan?',
+      a: 'On the Scale Premium plan, our system automatically listens to Shopify refund, return, and cancellation webhooks in real-time and marks affected commissions as Protected (voided). On Starter and Pro plans, you can still manually review and reject commissions on unfulfilled or returned orders before issuing payouts.',
+    },
+    {
+      q: 'Can I set custom commission rates for individual top-performing creators?',
+      a: 'Yes! On the Pro and Scale Premium plans, you can override your default program commission and set tailored flat or percentage rates for specific VIP creators directly inside their creator profile.',
+    },
+    {
+      q: 'How does billing work, and what payment methods can I use?',
+      a: "All subscription charges are handled securely through official Shopify App Billing and added directly to your standard Shopify store invoice. You don't need to enter a separate credit card—Shopify charges your existing store payment method on file.",
     },
   ];
 

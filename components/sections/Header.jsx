@@ -58,7 +58,7 @@ export default function Header({ onBookDemo }) {
     { title: 'Dual Link & Code Tracking', icon: <Link2 className="w-4 h-4 text-blue-600" />, href: '/features/dual-attribution' },
     { title: 'Tiered Commission Engine', icon: <Percent className="w-4 h-4 text-blue-600" />, href: '/features/commission-engine' },
     { title: 'White-Label Creator Portal', icon: <LayoutDashboard className="w-4 h-4 text-blue-600" />, href: '/features/creator-portal' },
-    { title: 'Auto Payouts & Refunds', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '/features/payout-reconciliation' },
+    { title: 'Refunds & Commission Tracking', icon: <Wallet className="w-4 h-4 text-blue-600" />, href: '/features/payout-reconciliation' },
     { title: 'Fraud Guard & Security', icon: <ShieldCheck className="w-4 h-4 text-blue-600" />, href: '/features/anti-fraud' },
   ];
 
@@ -106,7 +106,7 @@ export default function Header({ onBookDemo }) {
         }`}
       >
         {/* Full-width container with edge padding instead of constrained max-width container */}
-        <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-[1600px] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
           
           {/* Left Block: Logo + Navigation Links */}
           <div className="flex items-center gap-10">
@@ -157,7 +157,7 @@ export default function Header({ onBookDemo }) {
                                   By Feature
                                 </span>
                                 <p className="text-[11.5px] text-slate-500 font-normal leading-relaxed mt-1">
-                                  Zero-loss tracking, dynamic commissions, and automated payouts.
+                                  Zero-loss tracking, dynamic commissions, and refund protection.
                                 </p>
                               </div>
                             </div>

@@ -61,15 +61,15 @@ const trustFeatures = [
   },
   {
     icon: <DataBackedIcon />,
-    title: 'Data-backed Solution',
+    title: 'Commission Protection',
   },
   {
     icon: <ScalabilityIcon />,
-    title: 'Scalability for Growth',
+    title: 'Real-Time Creator Analytics',
   },
   {
     icon: <StrategicSupportIcon />,
-    title: 'Strategic Support',
+    title: '24/7 Support',
   },
 ];
 

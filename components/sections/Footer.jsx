@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { CheckCircle2, ShieldCheck, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export default function Footer() {
   const columns = [
@@ -11,7 +11,7 @@ export default function Footer() {
       links: [
         { label: 'Link Tracking', href: '/features' },
         { label: 'Commission Engine', href: '/features' },
-        { label: 'Automated Payouts', href: '/features' },
+        { label: 'Refund Reconciliation', href: '/features/payout-reconciliation' },
         { label: 'White-label Portals', href: '/features' },
       ],
     },
@@ -131,31 +131,8 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Middle Segment: Trust & Award Badges Row */}
-        <div className="flex flex-wrap items-center gap-6 py-6 border-y border-slate-900 mb-8 justify-between">
-          <div className="flex flex-wrap gap-4 items-center">
-            {/* Built for Shopify design indicator */}
-            <div className="flex items-center gap-2 bg-slate-900/60 border border-slate-850 px-3.5 py-1.5 rounded-lg text-xs text-white font-medium">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>Built for Shopify Plus</span>
-            </div>
-            {/* Security Indicator */}
-            <div className="flex items-center gap-2 bg-slate-900/60 border border-slate-850 px-3.5 py-1.5 rounded-lg text-xs text-white font-medium">
-              <ShieldCheck className="w-4 h-4 text-primary" />
-              <span>SOC 2 Type II Certified</span>
-            </div>
-            {/* G2 Indicator */}
-            <div className="flex items-center gap-2 bg-slate-900/60 border border-slate-850 px-3.5 py-1.5 rounded-lg text-xs text-white font-medium">
-              <span>G2 High Performer 2026</span>
-            </div>
-          </div>
-          <div className="text-[10px] text-slate-600 font-medium">
-            Uptime: 99.98%
-          </div>
-        </div>
-
         {/* Bottom Segment: Copyright & Legal */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-slate-500 font-medium">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-slate-500 font-medium pt-8 border-t border-slate-900">
           <div>
             &copy; {new Date().getFullYear()} KickAffiliate Inc. All rights reserved.
           </div>

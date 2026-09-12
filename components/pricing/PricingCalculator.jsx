@@ -10,8 +10,8 @@ export default function PricingCalculator({ onBookDemo }) {
 
   const affiliateDrivenRevenue = Math.round((monthlyRevenue * affiliateShare) / 100);
   const creatorCommission = Math.round((affiliateDrivenRevenue * commissionRate) / 100);
-  const netAffiliateProfit = Math.round(affiliateDrivenRevenue - creatorCommission - 29); // Assuming $29 Pro plan
-  const roiMultiplier = creatorCommission > 0 ? (affiliateDrivenRevenue / (creatorCommission + 29)).toFixed(1) : 0;
+  const netAffiliateProfit = Math.round(affiliateDrivenRevenue - creatorCommission - 19); // Assuming $19 Pro plan
+  const roiMultiplier = creatorCommission > 0 ? (affiliateDrivenRevenue / (creatorCommission + 19)).toFixed(1) : 0;
 
   return (
     <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl relative overflow-hidden">
@@ -131,7 +131,7 @@ export default function PricingCalculator({ onBookDemo }) {
               {/* Stat 3 */}
               <div className="flex justify-between items-center text-xs">
                 <span className="text-slate-400">KickAffiliate Software Cost:</span>
-                <span className="font-mono font-bold text-white">$29/mo</span>
+                <span className="font-mono font-bold text-white">$19/mo</span>
               </div>
 
               {/* Highlight ROI */}
@@ -148,7 +148,7 @@ export default function PricingCalculator({ onBookDemo }) {
 
             <button
               onClick={onBookDemo}
-              className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+              className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
             >
               <span>Unlock This Growth</span>
               <ArrowRight className="w-3.5 h-3.5" />

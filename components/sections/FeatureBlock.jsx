@@ -10,23 +10,23 @@ export default function FeatureBlock() {
   const subFeatures = [
     {
       icon: <Link2 className="w-6 h-6 text-primary" />,
-      title: 'Custom Affiliate Links',
-      description: 'Automatically generate branded URLs for influencers to share on social channels with zero redirection lag.',
+      title: 'Track Every Creator Sale',
+      description: 'See clicks, orders, revenue, conversion rates, and commissions for every creator from one dashboard.',
     },
     {
       icon: <Sliders className="w-6 h-6 text-primary" />,
-      title: 'Dynamic Commission Rules',
-      description: 'Define flat rate, percentage-based, or tiered performance incentives tailored to specific affiliate tiers.',
+      title: 'Control Every Commission',
+      description: 'Set custom commission rates by program, product, or individual creator without complicated spreadsheets.',
     },
     {
       icon: <CheckSquare className="w-6 h-6 text-primary" />,
-      title: 'Auto-Fulfillment Sync',
-      description: 'Instant order verification on Shopify ensures payouts are only queued for fully completed, non-returned sales.',
+      title: 'Protect Before You Pay',
+      description: 'Reserve eligible commissions until the order is delivered and your protection period is complete.',
     },
     {
       icon: <Palette className="w-6 h-6 text-primary" />,
-      title: 'White-Label Portals',
-      description: 'Equip your creators with a fully co-branded space to monitor referrals, pull marketing assets, and check balances.',
+      title: 'Catch Suspicious Activity',
+      description: 'Identify potentially fraudulent orders, bot activity, and coupon abuse before unnecessary commissions are paid.',
     },
   ];
 
