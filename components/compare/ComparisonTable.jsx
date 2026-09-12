@@ -1,90 +1,258 @@
 'use client';
 
 import React from 'react';
-import { Check, X, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Check, X, ArrowRight } from 'lucide-react';
+
+function renderCell(val, isKick = false) {
+  if (val === true || val === '✓') {
+    return (
+      <div
+        className={`inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full font-bold text-xs ${
+          isKick
+            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-2xs'
+            : 'bg-slate-100 text-slate-700 border border-slate-200'
+        }`}
+      >
+        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+        {isKick && <span>Included</span>}
+      </div>
+    );
+  }
+
+  if (val === false || val === '✕' || val === 'X') {
+    return (
+      <div className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-full bg-red-50 text-red-600 font-medium text-xs border border-red-100">
+        <X className="w-3.5 h-3.5 shrink-0" />
+        <span>Not Available</span>
+      </div>
+    );
+  }
+
+  if (typeof val === 'string') {
+    if (val.startsWith('✓')) {
+      const text = val.replace('✓', '').trim();
+      return (
+        <div
+          className={`inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full font-bold text-xs ${
+            isKick
+              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-2xs'
+              : 'bg-slate-100 text-slate-700 border border-slate-200'
+          }`}
+        >
+          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+          {text ? <span>{text}</span> : isKick ? <span>Included</span> : null}
+        </div>
+      );
+    }
+
+    if (val.startsWith('✕') || val.startsWith('X ')) {
+      const text = val.replace(/^[✕X]\s*/, '').trim();
+      return (
+        <div className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-full bg-red-50 text-red-600 font-medium text-xs border border-red-100">
+          <X className="w-3.5 h-3.5 shrink-0" />
+          <span>{text || 'Not Available'}</span>
+        </div>
+      );
+    }
+
+    if (val.startsWith('△')) {
+      const text = val.replace('△', '').trim();
+      return (
+        <div className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-medium text-xs border border-amber-200/80">
+          <span className="font-bold text-[11px] text-amber-600">△</span>
+          {text ? <span>{text}</span> : <span>Limited</span>}
+        </div>
+      );
+    }
+
+    return (
+      <span
+        className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+          isKick
+            ? 'bg-primary/10 text-primary border border-primary/20'
+            : 'bg-slate-100 text-slate-700 border border-slate-200'
+        }`}
+      >
+        {val}
+      </span>
+    );
+  }
+
+  return val;
+}
 
 export default function ComparisonTable({ competitorKey = 'goaffpro', onBookDemo }) {
   const competitorData = {
     goaffpro: {
       name: 'GoAffPro',
-      headline: 'KickAffiliate vs. GoAffPro',
-      tagline: 'A modern, reliable Shopify-native affiliate platform without clunky 2010s interfaces or hidden paywalls.',
-      summary: 'While GoAffPro is widely used, merchants frequently struggle with its complex legacy UI, slow support times, and unexpected plan restrictions as you scale. KickAffiliate delivers a clean, intuitive modern dashboard, zero extra transaction fees, and instant Shopify webhook reconciliation.',
+      headline: 'Kick Affiliate vs. GoAffPro',
+      tagline:
+        'Get advanced creator affiliate controls from $19/month, with commission protection and 0% performance fees, without jumping to a $49+ paid plan.',
+      summary:
+        'Get advanced creator affiliate controls from $19/month, with commission protection and 0% performance fees, without jumping to a $49+ paid plan. Kick Affiliate delivers a clean, intuitive modern dashboard, zero extra transaction fees, and instant Shopify webhook reconciliation.',
       advantages: [
-        'Clean modern UI that your team and creators actually enjoy using',
-        'Zero extra transaction cuts on referred customer orders',
-        'Native Shopify GraphQL integration and real-time webhook sync',
-        'Dedicated self-serve creator portal with instant link creation',
-        'Automatic order refund & cancellation reconciliation',
+        'Start Pro features from just $19/month',
+        '7-day post-delivery commission protection',
+        'Fraud/bot protection on Pro',
+        'Automated refund & return protection on Premium',
+        '0% performance fee',
+        'Unlimited referral orders',
+        'Custom commission & commission override',
+        'Dedicated account manager on Premium',
       ],
       tableRows: [
-        { feature: 'Modern, Intuitive User Interface', kick: true, comp: false, note: 'GoAffPro uses a legacy complex interface' },
-        { feature: 'Zero Extra Transaction Fees', kick: true, comp: false, note: 'GoAffPro limits features on lower tiers' },
-        { feature: 'Dedicated Self-Serve Creator Portal', kick: true, comp: false, note: 'GoAffPro portal is clunky' },
-        { feature: 'Real-Time Order & Refund Webhook Sync', kick: true, comp: true, note: 'Both sync with Shopify' },
-        { feature: 'Lightweight Theme App Embed (<8kb)', kick: true, comp: false, note: 'Heavier client script' },
-        { feature: 'Automated Refund & Commission Reconciliation', kick: true, comp: true, note: 'Both offer reconciliation' },
-        { feature: 'Priority Support SLA (<2 hours)', kick: true, comp: false, note: 'Often 24-48h turnaround' },
+        { feature: 'Starting paid price', kick: 'Free or $19/mo', comp: '$49/mo' },
+        { feature: 'UI/UX', kick: 'Premium', comp: 'Limited' },
+        { feature: 'Performance fee', kick: '✓ 0%', comp: '✓ 0%' },
+        { feature: 'Free plan', kick: '✓', comp: '✓' },
+        { feature: 'Free referral orders', kick: '✓ Unlimited', comp: '✓ Unlimited' },
+        { feature: 'Unlimited active creators', kick: '✓ Premium', comp: '✓ Free' },
+        { feature: 'Unlimited programs', kick: '✓ Premium', comp: '△ Limited groups/program features' },
+        { feature: 'Custom commission', kick: '✓ Free', comp: '✓' },
+        { feature: 'Commission override', kick: '✓ Pro', comp: '✓ Premium' },
+        { feature: 'Creator analytics', kick: '✓ Pro', comp: '✓' },
+        { feature: 'Program reporting', kick: '✓ Premium', comp: '✓' },
+        { feature: 'Fraud protection', kick: '✓ Pro', comp: '△ Business' },
+        { feature: 'Bot/suspicious activity protection', kick: '✓ Free', comp: '△ Business fraud management' },
+        { feature: 'Manual refund deduction', kick: '✓ Pro', comp: '△ Commission/referral controls' },
+        { feature: 'Automated refund protection', kick: '✓ Premium', comp: '△ Limited Available through commission/referral controls' },
+        { feature: 'Approval/hold protection', kick: '✓', comp: '✓' },
+        { feature: '7-day post-delivery protection', kick: '✓', comp: '✕' },
+        { feature: 'Creator portal', kick: '✓', comp: '✓' },
+        { feature: 'Custom email', kick: '✓ Free', comp: '✓ Premium' },
+        { feature: 'Email marketing', kick: '✓ Free', comp: '✓ Premium' },
+        { feature: 'Dedicated account manager', kick: '✓ Premium', comp: '✓ Enterprise' },
+        { feature: 'API / integrations', kick: '✓ Premium', comp: '✓' },
+        { feature: '24/7 support', kick: '✓', comp: '✓' },
       ],
     },
     uppromote: {
       name: 'UpPromote',
-      headline: 'KickAffiliate vs. UpPromote',
-      tagline: 'Transparent pricing with no unexpected referral limits or complex tiered lock-ins.',
-      summary: 'UpPromote offers an extensive feature list but locks critical tracking and payout capabilities behind expensive high-tier plans. KickAffiliate gives you full access to multi-tier commissions, white-label portals, and unmetered creator onboarding at transparent rates.',
+      headline: 'Kick Affiliate vs. UpPromote',
+      tagline:
+        'Track creator sales and manage commissions from $19/month, without paying a percentage of your affiliate revenue.',
+      summary:
+        'Track creator sales and manage commissions from $19/month, without paying a percentage of your affiliate revenue. UpPromote locks critical tracking and payout capabilities behind expensive high-tier plans. Kick Affiliate gives you full access to multi-tier commissions, white-label portals, and unmetered creator onboarding at transparent rates.',
       advantages: [
-        'Full multi-tier commission engine without enterprise tier surcharges',
-        'Dedicated white-label creator portal on simple flat pricing',
-        'Lightweight theme embed designed for Core Web Vitals speed',
-        'Straightforward, unbloated setup taking under 5 minutes',
+        '$19/month Pro plan with 0% performance fee',
+        '7-day post-delivery commission protection',
+        'Custom commission & commission override controls',
+        'Fraud/bot protection included on Pro',
+        'Automated refund & return protection on Premium',
+        '24/7 support across all plans',
+        '$59 Premium with unlimited active creators',
+        'Priority API & webhook integrations',
       ],
       tableRows: [
-        { feature: 'Transparent Flat Pricing', kick: true, comp: false, note: 'UpPromote has complex feature gating' },
-        { feature: 'Unlimited Active Creators on Scale Plan', kick: true, comp: false, note: 'Strict referral limits on basic plans' },
-        { feature: 'Dual Attribution (Link + Discount Codes)', kick: true, comp: true, note: 'Supported by both' },
-        { feature: 'White-Label Creator Portal Branding', kick: true, comp: false, note: 'Locked behind $139+/mo tier' },
-        { feature: 'Automated Return & Refund Deductions', kick: true, comp: true, note: 'Supported by both' },
-        { feature: 'Intuitive Creator Onboarding & Portal Setup', kick: true, comp: true, note: 'Supported by both' },
-        { feature: 'Free 1-on-1 Migration Support', kick: true, comp: false, note: 'Self-serve on entry plans' },
+        { feature: 'Starting paid price', kick: '$19/mo', comp: '$29.99/mo' },
+        { feature: 'Performance fee', kick: '✓ 0%', comp: '✕ 2% Extra charge for each referral' },
+        { feature: 'Free plan', kick: '✓', comp: '✓' },
+        { feature: 'Free referral orders', kick: '✓ Unlimited', comp: '△ $3,000 referral review (Limited)' },
+        { feature: 'Custom commission', kick: '✓', comp: '✓' },
+        { feature: 'Commission override', kick: '✓', comp: '✓' },
+        { feature: 'Creator analytics', kick: '✓', comp: '✓' },
+        { feature: 'Program reporting', kick: '✓', comp: '✓' },
+        { feature: 'Fraud protection', kick: '✓ Free', comp: '✓ Paid' },
+        { feature: 'Bot/suspicious activity protection', kick: '✓', comp: '✓' },
+        { feature: 'Manual refund deduction', kick: '✓', comp: '✓' },
+        { feature: 'Automated refund protection', kick: '✓', comp: '✓' },
+        { feature: 'Approval/hold protection', kick: '✓', comp: '✓' },
+        { feature: '7-day post-delivery protection', kick: '✓', comp: '✕' },
+        { feature: 'Creator portal', kick: '✓', comp: '✓' },
+        { feature: 'Custom email', kick: '✓ Pro', comp: '✓ Growth+' },
+        { feature: 'Unlimited active creators', kick: '✓', comp: '✓' },
+        { feature: 'Unlimited programs', kick: '✓', comp: '✓' },
+        { feature: 'Dedicated account manager', kick: '✓ Premium', comp: '△ Higher tier/support' },
+        { feature: 'API / integrations', kick: '✓', comp: '✓' },
+        { feature: '24/7 support', kick: '✓', comp: '✓' },
       ],
     },
     refersion: {
       name: 'Refersion',
-      headline: 'KickAffiliate vs. Refersion',
-      tagline: 'Enterprise-grade affiliate tracking without the $119+/mo baseline cost or legacy bloat.',
-      summary: 'Refersion is an established affiliate platform, but its steep entry price ($119+/mo) and rigid tracking workflows make it unnecessarily expensive for fast-moving Shopify DTC merchants. KickAffiliate provides equivalent dual-attribution accuracy, clean modern aesthetics, and automated payouts at a fraction of the cost.',
+      headline: 'Kick Affiliate vs. Refersion',
+      tagline:
+        'Run your creator affiliate program from $19/month with 0% performance fees, while keeping commission protection, fraud controls and analytics in one platform.',
+      summary:
+        'Run your creator affiliate program from $19/month with 0% performance fees, while keeping commission protection, fraud controls and analytics in one platform. Refersion entry price ($39/mo + 3% fee) makes it unnecessarily expensive for fast-moving Shopify DTC merchants. Kick Affiliate provides equivalent dual-attribution accuracy, clean modern aesthetics, and automated payouts at a fraction of the cost.',
       advantages: [
-        'Save up to 75% on monthly software costs while gaining a cleaner modern interface',
-        'Built specifically for Shopify merchants, rather than generic e-commerce',
-        'Rapid setup in 5 minutes vs multi-week implementation cycles',
-        'Self-serve creator portal with zero login friction',
+        '$19/month Pro plan',
+        '0% performance fee',
+        'Unlimited referral orders',
+        '7-day post-delivery commission protection',
+        'Fraud/bot protection',
+        'Automated refund & return protection',
+        'Custom creator commissions',
+        '$59 Premium with unlimited creators',
       ],
       tableRows: [
-        { feature: 'Affordable Starting Plans ($0 - $19/mo)', kick: true, comp: false, note: 'Refersion starts at $119/mo' },
-        { feature: 'Shopify Native Embedded App Experience', kick: true, comp: false, note: 'External standalone dashboard' },
-        { feature: 'Zero Extra Per-Order Surcharges', kick: true, comp: false, note: 'Tiered order thresholds' },
-        { feature: 'Dual Attribution & Coupon Code Sync', kick: true, comp: true, note: 'Supported by both' },
-        { feature: 'Instant 1-Click CSV Migration', kick: true, comp: false, note: 'Complex migration process' },
-        { feature: 'Real-Time Webhook Refund Reconciliation', kick: true, comp: true, note: 'Supported by both' },
+        { feature: 'Starting paid price', kick: '$19/mo', comp: '✕ $39/mo + 3% Extra charge for each referral' },
+        { feature: 'Performance fee', kick: '✓ 0%', comp: '✕ 3% Launch' },
+        { feature: 'Free plan', kick: '✓', comp: '✕ Marketplace/free entry' },
+        { feature: 'Free referral orders', kick: '✓ Unlimited', comp: '△ Marketplace model limited' },
+        { feature: 'Unlimited active creators', kick: '✓ Premium', comp: '✓ Launch' },
+        { feature: 'Unlimited referral orders', kick: '✓ Free', comp: '✓ Launch' },
+        { feature: 'Custom commission', kick: '✓', comp: '✓' },
+        { feature: 'Commission override', kick: '✓ Pro', comp: '✓' },
+        { feature: 'Creator analytics', kick: '✓', comp: '✓' },
+        { feature: 'Program reporting', kick: '✓ Premium', comp: '✓' },
+        { feature: 'Fraud protection', kick: '✓ Free', comp: '△ Plan/features dependent' },
+        { feature: 'Bot/suspicious activity protection', kick: '✓ Free', comp: '△' },
+        { feature: 'Manual refund deduction', kick: '✓ Pro', comp: '✓' },
+        { feature: 'Automated refund protection', kick: '✓ Premium', comp: '△ Reversal/approval workflow' },
+        { feature: 'Approval/hold protection', kick: '✓', comp: '✓' },
+        { feature: '7-day post-delivery protection', kick: '✓', comp: '✕' },
+        { feature: 'Creator portal', kick: '✓', comp: '✓' },
+        { feature: 'Custom email', kick: '✓ Free', comp: '✓' },
+        { feature: 'Custom coupon codes', kick: '✓ Premium', comp: '✓' },
+        { feature: 'Automated payouts', kick: '△', comp: '✓' },
+        { feature: 'Dedicated account manager', kick: '✓ Premium', comp: '△ Scale' },
+        { feature: 'API / integrations', kick: '✓ Premium', comp: '✓' },
+        { feature: '0% revenue share', kick: '✓', comp: '✕' },
       ],
     },
-    impact: {
-      name: 'Impact.com',
-      headline: 'KickAffiliate vs. Impact.com',
-      tagline: 'Designed for agile Shopify brands, not complex enterprise conglomerates.',
-      summary: 'Impact.com is built for massive multinational enterprise affiliate partnerships with steep contracts, percent-of-revenue cuts, and multi-month onboarding. KickAffiliate gives Shopify merchants complete control over their creator and influencer programs with zero contracts, instant setup, and no percentage fees.',
+    bixgrow: {
+      name: 'BixGrow',
+      headline: 'Kick Affiliate vs. BixGrow',
+      tagline:
+        'Kick adds a dedicated commission-protection workflow designed to help merchants control refunds, returns and creator payouts.',
+      summary:
+        'Kick adds a dedicated commission-protection workflow designed to help merchants control refunds, returns and creator payouts. While BixGrow offers basic affiliate features, merchants frequently struggle when managing complex payout hold periods, creator tiers, and return reconciliation.',
       advantages: [
-        'No multi-thousand dollar enterprise contracts or revenue-share cuts',
-        'No long onboarding delays — install and start recruiting creators in 5 minutes',
-        'Native Shopify app integration embedded inside your Shopify Admin',
-        'Transparent flat SaaS pricing without platform revenue commissions',
+        '7-day post-delivery commission protection',
+        '$19 Pro plan',
+        '0% performance fee',
+        'Fraud/bot protection',
+        'Automated refund & return protection',
+        'Custom creator commission controls',
+        'Creator + program analytics',
+        '24/7 support',
+        '$59 Premium with unlimited creators',
       ],
       tableRows: [
-        { feature: 'No Percentage-of-Revenue Take Rate', kick: true, comp: false, note: 'Impact charges platform rev-shares' },
-        { feature: 'Zero Setup Time (Ready in 5 mins)', kick: true, comp: false, note: 'Requires weeks of enterprise setup' },
-        { feature: 'Built Exclusively for Shopify DTC Brands', kick: true, comp: false, note: 'Generic enterprise affiliate network' },
-        { feature: 'White-Label Creator Experience', kick: true, comp: true, note: 'Both provide creator portals' },
-        { feature: 'No Long-Term Annual Lock-In Contracts', kick: true, comp: false, note: 'Impact requires enterprise contracts' },
+        { feature: 'Starting paid price', kick: '$19/mo', comp: '$19.99/mo' },
+        { feature: 'Performance fee', kick: '✓ 0%', comp: '✓ 0%' },
+        { feature: 'Free plan', kick: '✓', comp: '✓' },
+        { feature: 'Free referral orders', kick: '✓ Unlimited', comp: '△ 50/month' },
+        { feature: 'Unlimited active creators', kick: '✓ Premium', comp: '✓ Scale' },
+        { feature: 'Unlimited programs', kick: '✓ Premium', comp: '✓ Scale' },
+        { feature: 'Unlimited referral orders', kick: '✓', comp: '✓ Scale' },
+        { feature: 'Custom commission', kick: '✓', comp: '✓' },
+        { feature: 'Commission override', kick: '✓ Pro', comp: '✓ Advanced commission rules' },
+        { feature: 'Creator analytics', kick: '✓', comp: '✓' },
+        { feature: 'Program reporting', kick: '✓ Premium', comp: '△ Reporting available' },
+        { feature: 'Fraud protection', kick: '✓ Free', comp: '✓ Scale' },
+        { feature: 'Bot/suspicious activity protection', kick: '✓', comp: '△ Fraud protection' },
+        { feature: 'Manual refund deduction', kick: '✓ Pro', comp: '✕' },
+        { feature: 'Automated refund protection', kick: '✓ Premium', comp: '✕' },
+        { feature: 'Approval/hold protection', kick: '✓', comp: '✕' },
+        { feature: '7-day post-delivery protection', kick: '✓', comp: '✕' },
+        { feature: 'Creator portal', kick: '✓', comp: '✓' },
+        { feature: 'Custom email', kick: '✓ Free', comp: '✓' },
+        { feature: 'Anti-leak coupon', kick: '✓', comp: '✓ Pro' },
+        { feature: 'Dedicated account manager', kick: '✓ Premium', comp: '△' },
+        { feature: 'API access', kick: '✓ Premium', comp: '✓ Advanced' },
+        { feature: 'Webhooks', kick: '✓ Pro', comp: '✓ Pro' },
+        { feature: '24/7 support', kick: '✓', comp: '✓' },
       ],
     },
   };
@@ -102,15 +270,15 @@ export default function ComparisonTable({ competitorKey = 'goaffpro', onBookDemo
           <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-950 tracking-tight">
             {data.headline}
           </h2>
-          <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
+          {/* <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
             {data.summary}
-          </p>
+          </p> */}
         </div>
 
         {/* Key Advantages Grid */}
         <div className="space-y-3">
           <h4 className="font-display font-bold text-xs uppercase tracking-wider text-slate-900">
-            Why Shopify Merchants Switch to KickAffiliate:
+            WHY MERCHANTS CHOOSE KICK AFFILIATE:
           </h4>
           <div className="grid sm:grid-cols-2 gap-3 text-xs text-slate-700">
             {data.advantages.map((adv, idx) => (
@@ -121,7 +289,7 @@ export default function ComparisonTable({ competitorKey = 'goaffpro', onBookDemo
                 <div className="p-0.5 rounded-full bg-emerald-50 text-emerald-600 shrink-0 mt-0.5 border border-emerald-200">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="font-medium">{adv}</span>
+                <span className="font-medium text-slate-900">{adv}</span>
               </div>
             ))}
           </div>
@@ -142,7 +310,7 @@ export default function ComparisonTable({ competitorKey = 'goaffpro', onBookDemo
                   Capability / Feature
                 </th>
                 <th className="p-4 sm:p-5 text-center font-display font-bold text-primary text-sm w-1/4 bg-primary/5 border-x border-primary/20">
-                  KickAffiliate
+                  Kick Affiliate
                 </th>
                 <th className="p-4 sm:p-5 text-center font-display font-bold text-slate-700 text-sm w-1/4">
                   {data.name}
@@ -154,37 +322,16 @@ export default function ComparisonTable({ competitorKey = 'goaffpro', onBookDemo
                 <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
                   <td className="p-4 sm:p-5 font-semibold text-slate-900">
                     {row.feature}
-                    {row.note && (
-                      <span className="block text-[11px] font-normal text-slate-400 mt-0.5">
-                        {row.note}
-                      </span>
-                    )}
                   </td>
 
-                  {/* KickAffiliate */}
+                  {/* Kick Affiliate Column */}
                   <td className="p-4 sm:p-5 text-center bg-primary/5 border-x border-primary/15">
-                    {row.kick ? (
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Included</span>
-                      </div>
-                    ) : (
-                      <X className="w-4 h-4 text-slate-300 mx-auto" />
-                    )}
+                    {renderCell(row.kick, true)}
                   </td>
 
-                  {/* Competitor */}
+                  {/* Competitor Column */}
                   <td className="p-4 sm:p-5 text-center text-slate-600">
-                    {row.comp ? (
-                      <span className="inline-block px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">
-                        Supported
-                      </span>
-                    ) : (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-red-50 text-red-600 font-medium border border-red-100">
-                        <X className="w-3.5 h-3.5" />
-                        <span>Limited / Missing</span>
-                      </div>
-                    )}
+                    {renderCell(row.comp, false)}
                   </td>
                 </tr>
               ))}

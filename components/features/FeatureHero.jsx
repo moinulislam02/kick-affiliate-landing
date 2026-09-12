@@ -57,7 +57,7 @@ export default function FeatureHero({ feature, onBookDemo }) {
                 onClick={onBookDemo}
                 className="h-12 px-6 rounded-full border border-slate-300 text-slate-800 text-xs font-bold uppercase tracking-wider hover:bg-slate-50 hover:border-slate-400 transition-all shadow-xs"
               >
-                Book a Demo
+                Connect
               </button>
             </div>
 

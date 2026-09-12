@@ -34,6 +34,7 @@ export default function FeaturePricingSummary({ onBookDemo }) {
       features: [
         'Up to 50 active creators',
         'Up to 10 active programs',
+        'Unlimited referral orders',
         'Custom registration image backdrop',
         'Advanced commission overrides',
         'Full Creator Analytics & Reports',
@@ -52,6 +53,7 @@ export default function FeaturePricingSummary({ onBookDemo }) {
       features: [
         'Unlimited active creators',
         'Unlimited active programs',
+        'Unlimited referral orders',
         'Custom registration image backdrop',
         'Automated Refund & Return Protection',
         'Full Creator Analytics & Reports',

@@ -6,21 +6,30 @@ export function generateStaticParams() {
     { competitor: 'vs-goaffpro' },
     { competitor: 'vs-uppromote' },
     { competitor: 'vs-refersion' },
-    { competitor: 'vs-impact' },
+    { competitor: 'vs-bixgrow' },
   ];
 }
 
 export function generateMetadata({ params }) {
-  const compName = params.competitor
-    .replace('vs-', '')
-    .replace(/^\w/, (c) => c.toUpperCase());
+  const competitorNames = {
+    'vs-goaffpro': 'GoAffPro',
+    'vs-uppromote': 'UpPromote',
+    'vs-refersion': 'Refersion',
+    'vs-bixgrow': 'BixGrow',
+  };
+
+  const compName =
+    competitorNames[params.competitor] ||
+    params.competitor
+      .replace('vs-', '')
+      .replace(/^\w/, (c) => c.toUpperCase());
 
   return {
-    title: `KickAffiliate vs ${compName} | Best Shopify Affiliate App Alternative`,
-    description: `Compare KickAffiliate vs ${compName}. Discover modern UI, zero transaction fees, and instant Shopify webhook reconciliation.`,
+    title: `Kick Affiliate vs ${compName} | Best Shopify Affiliate App Alternative`,
+    description: `Compare Kick Affiliate vs ${compName}. Discover modern UI, zero transaction fees, and instant Shopify webhook reconciliation.`,
     openGraph: {
-      title: `KickAffiliate vs ${compName} - Full Comparison`,
-      description: `See why merchants are switching from ${compName} to KickAffiliate.`,
+      title: `Kick Affiliate vs ${compName} - Full Comparison`,
+      description: `See why merchants are switching from ${compName} to Kick Affiliate.`,
       url: `https://kick-affiliate.techprob.org/compare/${params.competitor}`,
     },
   };

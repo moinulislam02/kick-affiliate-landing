@@ -8,7 +8,7 @@ import BookDemoModal from '@/components/sections/BookDemoModal';
 import TrustBar from '@/components/sections/TrustBar';
 import MigrationCTA from '@/components/sections/MigrationCTA';
 import FinalCTA from '@/components/sections/FinalCTA';
-import { ArrowRight, CheckCircle2, Zap, Scale, Layers } from 'lucide-react';
+import { ArrowRight, Scale } from 'lucide-react';
 
 export default function CompareHubClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,28 +18,36 @@ export default function CompareHubClient() {
 
   const competitors = [
     {
+      badge: 'LOWER-COST PAID ALTERNATIVE',
+      title: 'Kick Affiliate vs. GoAffPro',
       name: 'GoAffPro',
       slug: 'vs-goaffpro',
-      description: 'Why fast-growing Shopify stores leave GoAffPro’s complex legacy interface for KickAffiliate’s modern, intuitive platform.',
-      tag: 'Most Popular Switch',
+      description:
+        'Get advanced creator affiliate controls from $19/month, with commission protection and 0% performance fees, without jumping to a $49+ paid plan.',
     },
     {
+      badge: 'NO PERFORMANCE FEE',
+      title: 'Kick Affiliate vs. UpPromote',
       name: 'UpPromote',
       slug: 'vs-uppromote',
-      description: 'How KickAffiliate offers transparent pricing and unmetered creator onboarding without locking essential features behind enterprise tiers.',
-      tag: 'Best Value Alternative',
+      description:
+        'Track creator sales and manage commissions from $19/month, without paying a percentage of your affiliate revenue.',
     },
     {
+      badge: 'SAVE ON EVERY AFFILIATE SALE',
+      title: 'Kick Affiliate vs. Refersion',
       name: 'Refersion',
       slug: 'vs-refersion',
-      description: 'Enterprise dual-attribution tracking and automated payouts at a fraction of Refersion’s $119+/month baseline cost.',
-      tag: 'Save up to 75%',
+      description:
+        'Run your creator affiliate program from $19/month with 0% performance fees, while keeping commission protection, fraud controls and analytics in one platform.',
     },
     {
-      name: 'Impact.com',
-      slug: 'vs-impact',
-      description: 'Built specifically for Shopify DTC brands without multi-thousand dollar enterprise contracts or revenue take rates.',
-      tag: '0% Revenue Take Rate',
+      badge: 'PROTECT EVERY CREATOR COMMISSION',
+      title: 'Kick Affiliate vs. BixGrow',
+      name: 'BixGrow',
+      slug: 'vs-bixgrow',
+      description:
+        'Kick adds a dedicated commission-protection workflow designed to help merchants control refunds, returns and creator payouts.',
     },
   ];
 
@@ -56,10 +64,10 @@ export default function CompareHubClient() {
               Platform Comparisons
             </span>
             <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-slate-950 tracking-tight leading-[1.1]">
-              How KickAffiliate Compares to Other Shopify Apps
+              How Kick Affiliate Compares to Other Shopify Apps
             </h1>
             <p className="text-xs sm:text-base text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
-              See why hundreds of high-growth Shopify merchants are migrating from legacy affiliate software to KickAffiliate.
+              See why hundreds of high-growth Shopify merchants are migrating from legacy affiliate software to Kick Affiliate.
             </p>
           </div>
         </section>
@@ -77,17 +85,17 @@ export default function CompareHubClient() {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
-                        {comp.tag}
+                      <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 uppercase tracking-wider">
+                        {comp.badge}
                       </span>
                       <span className="text-xs text-slate-400 font-semibold">Side-by-Side</span>
                     </div>
 
                     <h2 className="font-display font-bold text-2xl text-slate-950 group-hover:text-primary transition-colors">
-                      KickAffiliate vs. {comp.name}
+                      {comp.title}
                     </h2>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {comp.description}
                     </p>
                   </div>
@@ -96,7 +104,7 @@ export default function CompareHubClient() {
                     href={`/compare/${comp.slug}`}
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 group-hover:text-primary transition-colors"
                   >
-                    <span>Read Full Comparison</span>
+                    <span>Read full comparison</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>

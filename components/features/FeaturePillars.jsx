@@ -125,7 +125,7 @@ export default function FeaturePillars({ onBookDemo }) {
         'Secure email & password authentication with first-time password setup',
         'Instant copy buttons for referral links and custom discount codes',
         'Real-time earnings ledger with obfuscated shopper data for privacy',
-        'Downloadable media kit repository (banners, logos, copy captions)',
+        '2-Factor Email OTP verification for secure payout updates (PayPal & Bank/Wise)',
       ],
       visual: (
         <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800 text-white space-y-4 shadow-lg">

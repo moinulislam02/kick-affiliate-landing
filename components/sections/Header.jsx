@@ -111,11 +111,12 @@ export default function Header({ onBookDemo }) {
           {/* Left Block: Logo + Navigation Links */}
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 select-none group">
-              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
-              <span className="font-display font-extrabold text-lg tracking-tight text-slate-900">
-                Kick<span className="text-primary">Affiliate</span>
-              </span>
+            <Link href="/" className="flex items-center select-none group">
+              <img
+                src="/kick-logo-light.png"
+                alt="Kick Affiliate"
+                className="h-8 md:h-8.5 w-auto object-contain group-hover:opacity-90 transition-opacity"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -350,14 +351,16 @@ export default function Header({ onBookDemo }) {
               onClick={onBookDemo}
               className="bg-white border border-slate-300 text-slate-950 font-bold uppercase text-[10px] tracking-wider rounded-full px-5 py-2 hover:bg-slate-50 hover:border-slate-400 transition-all duration-205 select-none shadow-xs"
             >
-              Book a demo
+              Connect
             </button>
-            <button
-              onClick={onBookDemo}
-              className="bg-black text-white font-bold uppercase text-[10px] tracking-wider rounded-full px-5 py-2 border border-pink-500/80 hover:bg-slate-900 shadow-xs transition-all duration-205 select-none"
+            <a
+              href={process.env.NEXT_PUBLIC_SHOPIFY_APP_STORE_URL || "https://apps.shopify.com/kick-affiliate"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black text-white font-bold uppercase text-[10px] tracking-wider rounded-full px-5 py-2 border border-pink-500/80 hover:bg-slate-900 shadow-xs transition-all duration-205 select-none inline-flex items-center justify-center cursor-pointer"
             >
               Start for free
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Trigger */}
@@ -397,12 +400,13 @@ export default function Header({ onBookDemo }) {
               <div className="space-y-5">
                 {/* Header inside drawer */}
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain" />
-                    <span className="font-display font-extrabold text-base text-slate-900">
-                      KickAffiliate
-                    </span>
-                  </div>
+                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center">
+                    <img
+                      src="/kick-logo-light.png"
+                      alt="Kick Affiliate"
+                      className="h-7 w-auto object-contain"
+                    />
+                  </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-slate-400 hover:text-slate-700 focus:outline-none"
@@ -501,17 +505,17 @@ export default function Header({ onBookDemo }) {
                   }}
                   className="font-bold text-xs text-slate-650 hover:text-slate-950 text-center py-2.5 border border-slate-200 rounded-lg bg-slate-50"
                 >
-                  Book a demo
+                  Connect
                 </button>
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    onBookDemo();
-                  }}
-                  className="w-full h-10 text-xs rounded-lg bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary-hover transition"
+                <a
+                  href={process.env.NEXT_PUBLIC_SHOPIFY_APP_STORE_URL || "https://apps.shopify.com/kick-affiliate"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full h-10 text-xs rounded-lg bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary-hover transition flex items-center justify-center cursor-pointer"
                 >
                   Start for free
-                </button>
+                </a>
               </div>
             </motion.div>
           </>

@@ -25,15 +25,42 @@ export default function ContactForm({ onBookDemo }) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [apiError, setApiError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setApiError('');
     setIsSubmitting(true);
-    // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_PLATFORM_ADMIN_URL || 'http://localhost:3004';
+      const response = await fetch(`${apiUrl}/api/support`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'contact',
+          name: formData.name,
+          email: formData.email,
+          storeUrl: formData.shopDomain,
+          monthlyRevenue: formData.revenueTier,
+          topic: formData.topic,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to send message. Please try again.');
+      }
+
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      setApiError(err.message || 'Failed to send message. Please check your network connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -69,7 +96,6 @@ export default function ContactForm({ onBookDemo }) {
               >
                 support@kickaffiliate.io
               </a>
-              <p className="text-[11px] text-slate-400 mt-0.5">Average reply time under 2 hours</p>
             </div>
           </div>
 
@@ -79,7 +105,6 @@ export default function ContactForm({ onBookDemo }) {
             </div>
             <div>
               <h4 className="font-display font-bold text-xs text-slate-900">Support Hours</h4>
-              <p className="text-xs text-slate-600">Monday – Friday: 9:00 AM – 8:00 PM EST</p>
               <p className="text-[11px] text-emerald-600 font-semibold mt-0.5">● 24/7 Critical Webhook Monitoring</p>
             </div>
           </div>
@@ -101,7 +126,7 @@ export default function ContactForm({ onBookDemo }) {
             onClick={onBookDemo}
             className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
           >
-            <span>Book a 15-Min Live Demo</span>
+            <span>Connect</span>
           </button>
         </div>
 
@@ -147,6 +172,12 @@ export default function ContactForm({ onBookDemo }) {
                 Fill out the form below and we will get back to you promptly.
               </p>
             </div>
+
+            {apiError && (
+              <div className="p-3 bg-red-50 border border-red-200 text-xs font-semibold text-red-600 rounded-xl text-center">
+                {apiError}
+              </div>
+            )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Name */}

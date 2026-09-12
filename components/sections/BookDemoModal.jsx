@@ -57,8 +57,27 @@ export default function BookDemoModal({ isOpen, onClose }) {
     setLoading(true);
 
     try {
-      // Simulate submission delay for smooth UI feedback
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      const apiUrl = process.env.NEXT_PUBLIC_PLATFORM_ADMIN_URL || 'http://localhost:3004';
+      const response = await fetch(`${apiUrl}/api/support`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'demo',
+          name: formData.name,
+          email: formData.email,
+          storeUrl: formData.storeUrl,
+          monthlyRevenue: formData.monthlyRevenue,
+          topic: 'Live Demo Booking',
+          message: 'Requested a 1-on-1 personalized live demonstration.',
+        }),
+      });
+
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit booking request. Please try again.');
+      }
 
       setSuccess(true);
       setFormData({ name: '', email: '', storeUrl: '', monthlyRevenue: '' });
@@ -138,7 +157,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
                   <motion.div key="form" className="space-y-5">
                     <div className="space-y-1">
                       <h3 className="font-display font-extrabold text-2xl text-slate-900 tracking-tight">
-                        Book a Live Demo
+                        Connect with us
                       </h3>
                       <p className="text-xs text-muted">
                         See how KickAffiliate integrates with your store in real-time.
