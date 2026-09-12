@@ -259,10 +259,10 @@ export default function LegalLayout({
               <p className="text-xs text-slate-500 leading-relaxed">
                 Contact our compliance team at{' '}
                 <a
-                  href="mailto:support@techprob.org"
+                  href="mailto:support@kickaffiliate.io"
                   className="text-primary hover:underline font-semibold"
                 >
-                  support@techprob.org
+                  support@kickaffiliate.io
                 </a>
               </p>
             </div>
@@ -294,7 +294,7 @@ export default function LegalLayout({
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="mailto:support@techprob.org"
+              href="mailto:support@kickaffiliate.io"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all shadow-md shadow-primary/20"
             >
               <Mail className="w-4 h-4" />

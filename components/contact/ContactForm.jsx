@@ -64,10 +64,10 @@ export default function ContactForm({ onBookDemo }) {
             <div>
               <h4 className="font-display font-bold text-xs text-slate-900">Email Support &amp; Sales</h4>
               <a
-                href="mailto:support@techprob.org"
+                href="mailto:support@kickaffiliate.io"
                 className="text-xs font-semibold text-primary hover:underline"
               >
-                support@techprob.org
+                support@kickaffiliate.io
               </a>
               <p className="text-[11px] text-slate-400 mt-0.5">Average reply time under 2 hours</p>
             </div>
