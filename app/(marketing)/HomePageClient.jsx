@@ -1,3 +1,4 @@
+// app/(marketing)/HomePageClient.jsx
 'use client';
 
 import React, { useState } from 'react';
@@ -18,7 +19,7 @@ import FinalCTA from '@/components/sections/FinalCTA';
 import Footer from '@/components/sections/Footer';
 import BookDemoModal from '@/components/sections/BookDemoModal';
 
-export default function MarketingPage() {
+export default function HomePageClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);

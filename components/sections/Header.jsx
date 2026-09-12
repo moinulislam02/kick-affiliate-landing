@@ -339,6 +339,9 @@ export default function Header({ onBookDemo }) {
               <Link href="/compare" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Compare
               </Link>
+              <Link href="/blog" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
+                Blog
+              </Link>
               <Link href="/contact" className="font-medium text-slate-850 hover:text-slate-950 text-[13px] transition-colors">
                 Contact
               </Link>
@@ -485,6 +488,13 @@ export default function Header({ onBookDemo }) {
                     className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
                   >
                     Compare Apps
+                  </Link>
+                  <Link
+                    href="/blog"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bold text-slate-800 text-sm border-b border-slate-100 pb-2 block"
+                  >
+                    Blog &amp; Insights
                   </Link>
                   <Link
                     href="/contact"

@@ -39,6 +39,7 @@ export default function Footer() {
     {
       title: 'Company',
       links: [
+        { label: 'Blog & Perspectives', href: '/blog' },
         { label: 'Pricing Plans', href: '/pricing' },
         { label: 'Contact Support', href: '/contact' },
         { label: 'Privacy Policy', href: '/privacy-policy' },
