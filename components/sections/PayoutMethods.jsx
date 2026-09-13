@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import Section from '../primitives/Section';
 import FadeInOnScroll from '../primitives/FadeInOnScroll';
@@ -15,9 +16,12 @@ export default function PayoutMethods() {
           <div className="lg:col-span-7 flex justify-center w-full relative order-2 lg:order-1">
             <FadeInOnScroll direction="up" duration={0.6} className="w-full flex justify-center">
               <div className="relative w-full max-w-[620px] flex items-center justify-center">
-                <img
+                <Image
                   src="/payout_status_cards_ui_1789186679499.png"
                   alt="Payout Status and Tracking Interface"
+                  width={1200}
+                  height={896}
+                  sizes="(max-width: 1024px) 100vw, 620px"
                   className="w-full h-auto object-contain drop-shadow-xl select-none"
                 />
               </div>

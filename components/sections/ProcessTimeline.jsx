@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 export default function ProcessTimeline() {
@@ -151,11 +152,13 @@ export default function ProcessTimeline() {
 
                 {/* Visual Card Container with Direct Image matching natural aspect ratio */}
                 <div className="w-full aspect-[1672/941] rounded-2xl bg-white border border-white/[0.08] shadow-2xl relative overflow-hidden flex items-center justify-center transition-all duration-300 hover:border-white/[0.14] group">
-                  <img
+                  <Image
                     src={step.image}
                     alt={step.title}
+                    width={1672}
+                    height={941}
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 620px, 840px"
                     className="w-full h-full object-contain rounded-2xl select-none"
-                    loading="lazy"
                   />
                 </div>
               </div>

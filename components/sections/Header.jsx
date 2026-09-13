@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -112,9 +113,12 @@ export default function Header({ onBookDemo }) {
           <div className="flex items-center gap-10">
             {/* Logo */}
             <Link href="/" className="flex items-center select-none group">
-              <img
+              <Image
                 src="/kick-logo-light.png"
                 alt="Kick Affiliate"
+                width={198}
+                height={39}
+                priority
                 className="h-8 md:h-8.5 w-auto object-contain group-hover:opacity-90 transition-opacity"
               />
             </Link>
@@ -196,9 +200,11 @@ export default function Header({ onBookDemo }) {
                 {/* Header inside drawer */}
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                   <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center">
-                    <img
+                    <Image
                       src="/kick-logo-light.png"
                       alt="Kick Affiliate"
+                      width={142}
+                      height={28}
                       className="h-7 w-auto object-contain"
                     />
                   </Link>

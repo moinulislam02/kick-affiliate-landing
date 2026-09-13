@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 
 export default function Footer() {
@@ -111,7 +112,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <img src="/kick-affiliate.png" alt="KickAffiliate" className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
+              <Image src="/kick-affiliate.png" alt="KickAffiliate" width={28} height={28} className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
               <span className="font-display font-extrabold text-xl text-white tracking-tight">
                 Kick<span className="text-primary">Affiliate</span>
               </span>

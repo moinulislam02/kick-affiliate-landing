@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Calendar,
   Clock,
@@ -155,9 +156,11 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
             {/* Author & Share Bar */}
             <div className="pt-6 border-t border-slate-200 w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
-                <img
+                <Image
                   src={author.avatar}
                   alt={author.name}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border border-slate-200"
                 />
                 <div>
@@ -200,11 +203,14 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
           {/* Hero Featured Image */}
           {post.image && (
             <div className="my-8 md:my-12">
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[16/9] max-h-[560px] w-full">
-                <img
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[16/9] max-h-[560px] w-full">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 1200px"
+                  className="object-cover"
                 />
               </div>
               {post.imageCaption && (
@@ -248,9 +254,11 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
                 {/* Author Card in Sidebar */}
                 <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-3">
                   <div className="flex items-center gap-3">
-                    <img
+                    <Image
                       src={author.avatar}
                       alt={author.name}
+                      width={40}
+                      height={40}
                       className="w-10 h-10 rounded-full object-cover border border-slate-200"
                     />
                     <div>
@@ -382,9 +390,11 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
 
               {/* Author Bio Segment at bottom of article */}
               <div className="pt-10 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 rounded-2xl bg-slate-50">
-                <img
+                <Image
                   src={author.avatar}
                   alt={author.name}
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover border border-slate-200 shrink-0"
                 />
                 <div className="space-y-1.5">
@@ -466,10 +476,12 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
                       href={`/blog/${rPost.slug}`}
                       className="block relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] border border-slate-150"
                     >
-                      <img
+                      <Image
                         src={rPost.image}
                         alt={rPost.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       />
                     </Link>
 

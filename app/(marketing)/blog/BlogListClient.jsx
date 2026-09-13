@@ -195,10 +195,13 @@ export default function BlogListClient({
                     href={`/blog/${featuredPost.slug}`}
                     className="group block relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[16/10]"
                   >
-                    <img
+                    <Image
                       src={featuredPost.image}
                       alt={featuredPost.title}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                     />
                     <div className="absolute inset-0 bg-slate-950/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
@@ -238,9 +241,11 @@ export default function BlogListClient({
                   {/* Author Bio Snippet */}
                   <div className="pt-2 flex items-center justify-between border-t border-slate-100 mt-4">
                     <div className="flex items-center gap-3">
-                      <img
+                      <Image
                         src={featuredPost.author.avatar}
                         alt={featuredPost.author.name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full object-cover border border-slate-200"
                       />
                       <div>
@@ -291,10 +296,12 @@ export default function BlogListClient({
                       href={`/blog/${post.slug}`}
                       className="block relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] border border-slate-150"
                     >
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       />
                     </Link>
 
@@ -328,9 +335,11 @@ export default function BlogListClient({
                   {/* Author and Date Footer */}
                   <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <img
+                      <Image
                         src={post.author.avatar}
                         alt={post.author.name}
+                        width={28}
+                        height={28}
                         className="w-7 h-7 rounded-full object-cover border border-slate-200"
                       />
                       <div>

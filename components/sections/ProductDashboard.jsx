@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Activity, UserCheck, CheckCircle } from 'lucide-react';
 import Section from '../primitives/Section';
 import Eyebrow from '../primitives/Eyebrow';
@@ -42,23 +43,15 @@ export default function ProductDashboard() {
         {/* Browser Chrome Wrapper with Track Dashboard Image */}
         <FadeInOnScroll direction="up" duration={0.7} className="mb-16">
           <div className="bg-slate-950 rounded-2xl shadow-2xl overflow-hidden w-full mx-auto">
-            {/* Browser Header Bar */}
-            <div className="bg-slate-900/80 px-4 py-3 flex items-center gap-2 border-b border-slate-800">
-              <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              </div>
-              <div className="mx-auto bg-slate-950 border border-slate-800 px-6 sm:px-10 py-1.5 rounded-lg text-slate-400 text-[11px] font-mono select-none">
-                https://admin.kickaffiliate.com/overview
-              </div>
-            </div>
 
             {/* Dashboard Screenshot */}
             <div className="w-full bg-slate-950 flex items-center justify-center overflow-hidden">
-              <img
+              <Image
                 src="/track.png"
                 alt="KickAffiliate Real-Time Tracking & Command Center"
+                width={3418}
+                height={1982}
+                sizes="(max-width: 1280px) 100vw, 1200px"
                 className="w-full h-auto object-cover select-none"
               />
             </div>

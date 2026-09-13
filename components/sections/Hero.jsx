@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function Hero({ onBookDemo }) {
   return (
@@ -8,10 +9,13 @@ export default function Hero({ onBookDemo }) {
       
       {/* 1. Full-screen Banner Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <img
+        <Image
           src="/website-hero.png"
           alt="KickAffiliate hero background"
-          className="w-full h-full object-cover object-center lg:object-[82%_center] select-none"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center lg:object-[82%_center] select-none"
         />
         {/* Soft Left-to-Right gradient overlay to ensure crystal clear readability for left-aligned content */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-35% md:via-white/80 md:via-45% to-white/10 lg:to-transparent" />

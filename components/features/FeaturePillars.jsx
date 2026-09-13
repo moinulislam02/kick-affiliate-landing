@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import {
   CheckCircle2,
   Sparkles,
@@ -23,9 +24,12 @@ export default function FeaturePillars({ onBookDemo }) {
       ],
       visual: (
         <div className="overflow-hidden rounded-2xl">
-          <img
+          <Image
             src="/feature-1.png"
             alt="Zero-Loss Dual Attribution (Links + Codes)"
+            width={1388}
+            height={766}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="w-full h-auto object-contain select-none"
           />
         </div>
@@ -45,9 +49,12 @@ export default function FeaturePillars({ onBookDemo }) {
       ],
       visual: (
         <div className="overflow-hidden rounded-2xl ">
-          <img
+          <Image
             src="/feature-2.png"
             alt="Dynamic Multi-Tier Commission Engine"
+            width={1672}
+            height={941}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="w-full h-auto object-contain select-none"
           />
         </div>
@@ -68,9 +75,12 @@ export default function FeaturePillars({ onBookDemo }) {
       ],
       visual: (
         <div className="overflow-hidden rounded-2xl">
-          <img
+          <Image
             src="/feature-3.png"
             alt="White-Label Self-Serve Creator Portal"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="w-full h-auto object-contain select-none"
           />
         </div>
@@ -91,9 +101,12 @@ export default function FeaturePillars({ onBookDemo }) {
       ],
       visual: (
         <div className="overflow-hidden rounded-2xl">
-          <img
+          <Image
             src="/feature-4.png"
             alt="Refund Reconciliation & Commission Management"
+            width={1265}
+            height={750}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="w-full h-auto object-contain select-none"
           />
         </div>
@@ -114,9 +127,12 @@ export default function FeaturePillars({ onBookDemo }) {
       ],
       visual: (
         <div className="overflow-hidden rounded-2xl">
-          <img
+          <Image
             src="/feature-5.png"
             alt="Enterprise Fraud Guard & Self-Referral Prevention"
+            width={1672}
+            height={941}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="w-full h-auto object-contain select-none"
           />
         </div>

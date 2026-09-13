@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 // Icons matching the reference design
 function ShopifyIcon() {
@@ -133,11 +134,13 @@ export default function LogoMarquee() {
               className="inline-flex flex-col w-[260px] sm:w-[280px] flex-shrink-0 items-center gap-3.5"
             >
               {/* Product Photo - Tall Portrait Magazine Layout */}
-              <div className="w-full h-[360px] sm:h-[380px] overflow-hidden bg-slate-100 border border-slate-200/40 rounded-none shadow-sm">
-                <img
+              <div className="relative w-full h-[360px] sm:h-[380px] overflow-hidden bg-slate-100 border border-slate-200/40 rounded-none shadow-sm">
+                <Image
                   src={card.photo}
                   alt={card.name}
-                  className="w-full h-full object-cover pointer-events-none"
+                  fill
+                  sizes="(max-width: 640px) 260px, 280px"
+                  className="object-cover pointer-events-none"
                 />
               </div>
               

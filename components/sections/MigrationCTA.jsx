@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, MessageSquare, ArrowRight } from 'lucide-react';
 import Section from '../primitives/Section';
@@ -129,9 +130,11 @@ export default function MigrationCTA({ onBookDemo }) {
                   {/* Profile & Metric Details */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-slate-100">
                     <div className="flex items-center gap-3">
-                      <img
+                      <Image
                         src={current.avatar}
                         alt={current.author}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full object-cover border border-slate-200 shadow-xs"
                       />
                       <div>
